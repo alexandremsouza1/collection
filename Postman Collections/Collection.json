@@ -4058,7 +4058,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/product/contract?filter[document]=18603965006&filter[name]=contrato",
+							"raw": "{{base_url}}/product/contract?filter[document]=18603965006",
 							"host": [
 								"{{base_url}}"
 							],
@@ -4073,7 +4073,8 @@
 								},
 								{
 									"key": "filter[name]",
-									"value": "contrato"
+									"value": "contrato",
+									"disabled": true
 								}
 							]
 						}
