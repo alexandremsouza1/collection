@@ -1,0 +1,4493 @@
+{
+	"info": {
+		"_postman_id": "11bf3e76-8631-4149-b9c9-5f0c12aa1aae",
+		"name": "Aston Bank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7e7befd7-eb25-4469-8f24-570c4ab54760",
+								"exec": [
+									"if (responseCode.code === 200) {\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);\r",
+									"    postman.setEnvironmentVariable(\"expires_in\", jsonData.expires_in);\r",
+									"    postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);\r",
+									"    postman.setEnvironmentVariable(\"token_type\", jsonData.token_type);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8463c30d-84fc-4cb3-96ba-8ea6c2988ef4",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "8f3af774-c7a2-45e7-b21e-8cdde4ee3eab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Global-Key",
+								"value": "FVA3ebDI6I78y0lVNeqZzmkpY8MgweWbo5kWXZ3NhTPzsMPpLfyQ7t0NDd2No19/ShGEb/jW8Y0IYB0Z2CC0Ylz1KsmMtj9WEyTcfwzOdb4K568G5RbK8Po6cWFApede7eNrbRldb/i3FDlG+CYYzKlLJ9Bqw53zyNho9g+MB+OPp5clqFaz7s6FDi142S9PMVLhswqaz1YvsLLAztTI1aoiiV18w31VpxEveI9J0HmubM9y1WMlw3rLGqkv0i/lPocMYVDHnzricD8G7hqTjFwY+BHCeVsa2IoR7h6NDLFMVuVCt9FBujz7ckGpSAg1U3tlGMtYJ9jyq86bneOLNccg5uXUnMKEdyLqlDw86JFuV5S2lVLx3hA8DNeFVP4OY7uzh4pia5PePYxfcz1at5A609A8JMAf18VouauCPPv0dm83yf6Ez2zyVUs60+vjgMTN4wMI0/9csxj767l4xkUb1EsEz4ASkyg9IK06DZ/bi0iM52W+r+1dUa/v5mheV6FBi007JJR2f0TGsHUAY8lWy8Knbu1m1rnlenbZHEIA6sR2ysbgN8BRe0K/WYpQ0rBY8QPVK2BrrRF0TmTrRfcOuQ3gQQRXUXi+ZCux44K5A8jAwGzucD5FlvpQCwLaj1O4PWRlwut7Hk4tjbq+IQNhEQoKJmAax5s8JwS6OaY=",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"username\" : \"gustavo@plastikastudio.com.br\",\r\n    // \"username\" : \"arthur@astonenergia.com.br\",\r\n    \"username\" : \"gustavo@plastikastudio.com.br\",\r\n    // \"username\" : \"teste@teste1.com\",\r\n    // \"username\" : \"raphael.soprani@gmail.com\",\r\n    // \"username\" : \"lucas@plastikastudio.com.br\",\r\n    // \"username\" : \"gustavo010@plastikastudio.com.br\",\r\n    // \"username\" : \"gustavo.teste.1@plastika.com.br\",\r\n    \"password\" : \"remoa1z9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth"
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"id": "56f645f8-7e20-49b0-9ddd-7620fe082aa6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"id": "6c4dd1a9-d904-4d2c-a0e3-6dcc8c299456",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh_token\" : \"def502007ff24eb1ef76fd7b7e8e94da62fbb6c3809636f026e9b43994a58722bcbd7a0a9ce857be5109c81621597b92407860bd0d37fe56a463694d81e8a82f591ffb630ef63393ad95cb32619dd976c979ec756efbd624974d133d640e29fc223af504392e4c5771b122dfb254b54a8eb0aae91ff7e440e9866dcbc786bc385152090feb9f38817b58b62d2e56105b474ec83fc79cca0efeb10a81bbec4da083405e28e5beb424f2d207b48a498ac512728d566e4596c906cc6c8f9de17095b814c349d28e2b3b0a11a18fc2b340096908e1012a0fe181aa339df54b44ed9f97662ee2dff0939d6176f17be93bb56cfa1897ac3c9a7c07766330894bf309c40436fd15a1e045c47865cca1707cc2670702f8f9a9c5e796edee5d2b8232ab4815aba9be08824544d0c6a43e50a43620f2ceea0bff2a1d71ce307fe8d3eecc190b00a7e75560808fc12c299acf8b736092147a7834df341821e3c75da06285de7115\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth/refresh"
+					},
+					"response": []
+				}
+			],
+			"id": "a0b51e9b-c2e1-40f9-8878-d3f3c3060811"
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Pin Code",
+					"item": [
+						{
+							"name": "Create Pincode",
+							"id": "cbec9731-b9b2-4644-9a1a-9b5d27890745",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pincode\": \"9999\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/account/pincode"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Pincode Hash",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "62e813aa-6c6a-4102-931f-981f63584f13",
+										"exec": [
+											"if (responseCode.code === 200) {\r",
+											"    var jsonData = JSON.parse(responseBody);\r",
+											"    postman.setEnvironmentVariable(\"pincode_hash\", jsonData.hash);\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "16d465eb-0609-47dc-8183-4eff69f7ab0f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pincode\": \"9999|TRANSFER_PIX|2024-07-29T10:30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/account/pincode/hash"
+							},
+							"response": []
+						}
+					],
+					"id": "7286a79d-cfc9-482f-9669-f0cb21f00fdb"
+				},
+				{
+					"name": "My Limits",
+					"id": "d2870256-391d-4581-83c0-38d426c4aef0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-account-hash",
+								"value": "{{accoutnHash}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/account/limits"
+					},
+					"response": [
+						{
+							"id": "73ea747f-f11a-410e-8a8d-9321ee19bb90",
+							"name": "My Limits",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-account-hash",
+										"value": "{{accoutnHash}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": "{{base_url}}/account/limits"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 28 Mar 2024 21:42:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.25.4"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"data\": [\n        {\n            \"serviceType\": {\n                \"name\": \"PAYMENT\",\n                \"description\": \"Limite de pagamentos (boletos e tributos)\"\n            },\n            \"limits\": [\n                {\n                    \"limitType\": {\n                        \"name\": \"DAYTIME_TOTAL\",\n                        \"description\": \"Limite diurno total\"\n                    },\n                    \"maximunAmount\": 2000,\n                    \"definedAmount\": 2000\n                },\n                {\n                    \"limitType\": {\n                        \"name\": \"NIGHTTIME_TOTAL\",\n                        \"description\": \"Limite noturno total\"\n                    },\n                    \"maximunAmount\": 2000,\n                    \"definedAmount\": 1300\n                },\n                {\n                    \"limitType\": {\n                        \"name\": \"DAYTIME_TRANSACTIONAL\",\n                        \"description\": \"Limite diurno por transação\"\n                    },\n                    \"maximunAmount\": 50,\n                    \"definedAmount\": 50,\n                    \"raiseRequest\": {\n                        \"status\": \"PENDING_ANALYSIS\",\n                        \"amount\": 1300\n                    }\n                },\n                {\n                    \"limitType\": {\n                        \"name\": \"NIGHTTIME_TRANSACTION\",\n                        \"description\": \"Limite noturno por transação\"\n                    },\n                    \"maximunAmount\": 50,\n                    \"definedAmount\": 100,\n                    \"raiseRequest\": {\n                        \"status\": \"PENDING_ANALYSIS\",\n                        \"amount\": 1300\n                    }\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update My Limits",
+					"id": "148e0e4e-7a2c-44a4-ac10-56da70c6f6a5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-account-hash",
+								"value": "{{accoutnHash}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceType\" : \"PAYMENT\", // PIX / PAYMENT\r\n    \"limits\" : [\r\n        {\r\n            \"limitType\": \"DAYTIME_TRANSACTIONAL\", // DAYTIME_TRANSACTIONAL / NIGHTTIME_TOTAL\r\n            \"definedAmount\": 400\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/account/limits"
+					},
+					"response": []
+				},
+				{
+					"name": "Update My Limits (Novo)",
+					"id": "35f1774c-2f91-43a8-afd3-94ae76d0442a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-account-hash",
+								"value": "{{accoutnHash}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceType\" : \"PAYMENT\", // PIX / PAYMENT\r\n    \"limits\" : [\r\n        {\r\n            \"limitType\": \"DAYTIME_TRANSACTIONAL\", // DAYTIME_TRANSACTIONAL / NIGHTTIME_TOTAL\r\n            \"definedAmount\": 1200\r\n        },\r\n        {\r\n            \"limitType\": \"NIGHTTIME_TOTAL\", // DAYTIME_TRANSACTIONAL / NIGHTTIME_TOTAL\r\n            \"definedAmount\": 1300\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/account/limits"
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Account",
+					"id": "6257a90b-60ac-4429-930c-7f06ce8065ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account_hash\" : \"836e9d1d-b079-496f-a323-9f79aa9e4995\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/account/switch"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Balance",
+					"id": "46fe38d1-afc4-4e54-86b4-7807fd511ed2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-account-hash",
+								"value": "{{accoutnHash}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "{{base_url}}/balance"
+					},
+					"response": [
+						{
+							"id": "a8318cd1-9f18-452b-ae1d-5f2be6255c2a",
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/balance"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.13"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Jan 2024 13:32:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": {\n        \"amountAvailable\": 696969129193.67,\n        \"amountJudicialyBlocked\": 0,\n        \"amountTempBlocked\": 0,\n        \"amountPixBlocked\": 14459.23,\n        \"amountTempBlockedOperationInternal\": 250,\n        \"amountBlockedForDebit\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Extract Info",
+					"id": "caff8323-d1aa-4c9f-af5b-5724b9a84fef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/transactions",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "isCredit",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "lastSevenDays",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "typeTransaction",
+									"value": "DEBIT_PIX",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "8add0ba7-aec9-4b0a-b9a9-2f2c5fc4a153"
+		},
+		{
+			"name": "Bank",
+			"item": [
+				{
+					"name": "Show",
+					"id": "fe226c7f-8b96-4b9b-b0a3-b6127acddde0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Global-Key",
+								"value": "FVA3ebDI6I78y0lVNeqZzmkpY8MgweWbo5kWXZ3NhTPzsMPpLfyQ7t0NDd2No19/ShGEb/jW8Y0IYB0Z2CC0Ylz1KsmMtj9WEyTcfwzOdb4K568G5RbK8Po6cWFApede7eNrbRldb/i3FDlG+CYYzKlLJ9Bqw53zyNho9g+MB+OPp5clqFaz7s6FDi142S9PMVLhswqaz1YvsLLAztTI1aoiiV18w31VpxEveI9J0HmubM9y1WMlw3rLGqkv0i/lPocMYVDHnzricD8G7hqTjFwY+BHCeVsa2IoR7h6NDLFMVuVCt9FBujz7ckGpSAg1U3tlGMtYJ9jyq86bneOLNccg5uXUnMKEdyLqlDw86JFuV5S2lVLx3hA8DNeFVP4OY7uzh4pia5PePYxfcz1at5A609A8JMAf18VouauCPPv0dm83yf6Ez2zyVUs60+vjgMTN4wMI0/9csxj767l4xkUb1EsEz4ASkyg9IK06DZ/bi0iM52W+r+1dUa/v5mheV6FBi007JJR2f0TGsHUAY8lWy8Knbu1m1rnlenbZHEIA6sR2ysbgN8BRe0K/WYpQ0rBY8QPVK2BrrRF0TmTrRfcOuQ3gQQRXUXi+ZCux44K5A8jAwGzucD5FlvpQCwLaj1O4PWRlwut7Hk4tjbq+IQNhEQoKJmAax5s8JwS6OaY=",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/bank?search=banco c6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"bank"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "banco c6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "cda93ffb-0f29-4272-abb5-ec8ac70b0add"
+		},
+		{
+			"name": "Chatbot",
+			"item": [
+				{
+					"name": "Chatbot Create",
+					"id": "86d7053c-9cf1-4c20-85ea-762abdfd96f3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gustavo Melo Cont 2\",\r\n    \"email\": \"gustavo123456@plastikastudio.com.br\",\r\n    \"phone\": \"35997093399\",\r\n    \"gender\": \"MALE\",\r\n    \"password\": \"remoa1z9\",\r\n    \"address\": {\r\n        \"uf\": \"MG\",\r\n        \"ddd\": \"35\",\r\n        \"siafi\": \"7535\",\r\n        \"number\": \"320\",\r\n        \"zipCode\": \"37115-000\",\r\n        \"cityName\": \"Monte Belo\",\r\n        \"complement\": null,\r\n        \"isConfirmed\": \"YES\",\r\n        \"publicPlace\": \"Rua José Loureiro\",\r\n        \"neighborhood\": \"Centro\"\r\n    },\r\n    \"document\": \"36952407090\",\r\n    \"lastName\": \" complemetn\",\r\n    \"birthDate\": \"1994-04-15\",\r\n    \"firstName\": \"sem\",\r\n    \"documentBack\": \"temporary/user-documents/1.png\",\r\n    \"documentType\": \"cnh\",\r\n    \"documentFront\": \"temporary/user-documents/2.png\",\r\n    \"maritalStatus\": \"SINGLE\",\r\n    \"documentSelfie\": \"temporary/user-documents/3.png\",\r\n    \"educationLevel\": \"ILLITERATE\",\r\n    \"monthlyInvoicing\": \"2500\",\r\n    \"utilityBillDocument\": \"temporary/user-documents/4.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/chatbot/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Chatbot Create (PJ)",
+					"id": "f4e3f2e5-c97d-4995-9896-597335fb43b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": \"32268182000172\",\r\n    \"businessEmail\": \"posvenda@luizegaeltransportesltda.com.br\",\r\n    \"corporateName\": \"Luiz e Gael Transportes Ltda\",\r\n    \"fantasyName\": \"Luiz e Gael Transportes Ltda\",\r\n    \"activityCnae\": 64,\r\n    \"openingDate\": \"2019-09-06\",\r\n    \"isPoliticallyExposedPerson\": false,\r\n    \"constituitionType\": \"SOCIEDADE ANÔNIMA\",\r\n    \"amountMonthlyInvoicing\": 20000,\r\n    \"amountShareCapital\": 1000000,\r\n    \"amountPatrimony\": 0,\r\n    \"documentSocialContract\": \"temporary/user-documents/TESTE-SOCIAL-CONTRACT.pdf\",\r\n    \"documentRevenues\": \"temporary/user-documents/TESTE-REVENUES.pdf\",\r\n    \"documentLastChanges\": null,\r\n    \"address\": {\r\n        \"number\": \"745\",\r\n        \"isConfirmed\": \"YES\",\r\n        \"complement\": \"A\",\r\n        \"neighborhood\": \"Anhumas\",\r\n        \"zipCode\": \"37502300\",\r\n        \"publicPlace\": \"Estrada Anhumas\",\r\n        \"cityName\": \"Itajubá\",\r\n        \"uf\": \"MG\",\r\n        \"ddd\": null\r\n    },\r\n    \"phone\": \"35983461794\",\r\n    \"partners\": [\r\n        {\"05052497903\" : true},\r\n        {\"18603965006\" : true}\r\n    ],\r\n    \"terms\": {\r\n        \"timestamp\": 1718715667.276603,\r\n        \"user_agent\": \"okhttp\\/4.9.2\",\r\n        \"ip\": \"10.0.103.88\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/chatbot/legal/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Chatbot Create (PJ) Copy",
+					"id": "ca7e464e-aba0-459d-8f28-302e5beed5f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\":\"15088992000128\",\r\n    \"businessEmail\":\"testewdtea@tunr.com.br\",\r\n    \"phone\":\"31999999999\",\r\n    \"documentSocialContract\":\"temporary\\/user-documents\\/kwykedlsi76xngjsc00082h94cpmu3v8.pdf\",\r\n    \"documentRevenues\":\"temporary\\/user-documents\\/806oczajt79282e3mxevm7jkz14nyahr.pdf\",\r\n    \"documentLastChanges\":null,\r\n    \"amountMonthlyInvoicing\":\"10000\",\r\n    \"amountShareCapital\":\"50000\",\r\n    \"amountPatrimony\":\"50000\",\r\n    \"partners\":{\"01670605701\":true,\"18552346000168\":false,\"05110901961\":true,\"58672761049\":true,\"22734300869\":true},\r\n    \"terms\":{\"timestamp\":1719857934.327874,\"user_agent\":\"okhttp\\/4.9.2\",\"ip\":\"10.0.101.40\"}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/chatbot/legal/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Chatbot Update",
+					"id": "0ce0c7ab-4d5b-417c-bb57-9952aaff1d0e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":null,\r\n    \"firstName\":null,\r\n    \"lastName\":null,\r\n    \"email\":null,\r\n    \"document\":null,\r\n    \"monthlyInvoicing\":null,\r\n    \"birthDate\":null,\r\n    \"educationLevel\":null,\r\n    \"maritalStatus\":null,\r\n    \"gender\":null,\r\n    \"phone\":null,\r\n    \"address\":{\r\n        \"addressNumber\":\"460\",\r\n        \"addressIsConfirmed\":\"YES\",\r\n        \"addressComplement\":null,\r\n        \"addressNeighborhood\":\"Centro\",\r\n        \"addressZipCode\":\"80010-000\",\r\n        \"addressPublicPlace\":\"Rua Jos\\u00e9 Loureiro\",\r\n        \"addressCityName\":\"Curitiba\",\r\n        \"addressUf\":\"PR\",\r\n        \"addressDdd\":\"41\",\r\n        \"addressSiafi\":\"7535\"\r\n    },\r\n\r\n    \"updateType\":\"documents\",\r\n\r\n    \"documentBack\": \"temporary/user-documents/2.png\",\r\n    \"documentType\": \"cnh\",\r\n    \"documentFront\": \"temporary/user-documents/1.png\",    \r\n    \"documentSelfie\": \"temporary/user-documents/3.png\",    \r\n    \"utilityBillDocument\": \"temporary/user-documents/4.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/chatbot/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Chatbot Update (PJ)",
+					"id": "b1c58cfc-467c-4c76-981a-523129a05040",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"updateType\": \"documents\",\r\n  \"documentSocialContract\": \"temporary/user-documents/TESTE-SOCIAL-CONTRACT.pdf\",\r\n  \"documentRevenues\": \"temporary/user-documents/TESTE-REVENUES.pdf\",\r\n  \"documentLastChanges\": null,\r\n  \"amountMonthlyInvoicing\": null,\r\n  \"amountShareCapital\": null,\r\n  \"amountPatrimony\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/chatbot/legal/update/:document",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"chatbot",
+								"legal",
+								"update",
+								":document"
+							],
+							"variable": [
+								{
+									"id": "5c8e0761-7684-4351-95a0-4b1fde1a039b",
+									"key": "document",
+									"value": "42304713000199"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "50b04a74-7eb1-42f5-b563-5b81aadff6d1"
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "List All",
+					"id": "37039883-0875-4cbf-8cba-4dd08a031adf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contact?pageSize=1&page=4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contact"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create - PIX",
+					"id": "3d6c0a31-7565-4cd2-9dda-7e231c5a9153",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"+5579999999999\",\r\n    \"holder\": {\r\n        \"name\": \"NEXT TU PF TDM\",\r\n        \"document\": \"***055312**\",\r\n        \"type\": \"NATURAL\"        \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/contact"
+					},
+					"response": []
+				},
+				{
+					"name": "Create - TED",
+					"id": "0666ccf7-fa1d-4b48-b8e6-dc0415ee3164",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Gustavo Melo\",\r\n    \"document\" : \"***999356**\",\r\n    \"bank\" : \"C6 Bank\",\r\n    \"branch\" : \"0001\",\r\n    \"account_number\" : \"3145712\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/contact"
+					},
+					"response": []
+				}
+			],
+			"id": "5d018a19-3e00-4969-bfef-61c4bcbf317c"
+		},
+		{
+			"name": "Contracts",
+			"item": [
+				{
+					"name": "Find",
+					"id": "a7dee2d0-04e5-4f68-bbaf-813ab646cc5b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contracts/find",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contracts",
+								"find"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "signed",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "9",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is Signed",
+					"id": "550b91e1-dad3-4c53-a812-e528da75e8c1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/contracts/is-signed?contract_id=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"contracts",
+								"is-signed"
+							],
+							"query": [
+								{
+									"key": "contract_id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "4cb52bbc-6559-49ae-bb41-b4a38ab28737"
+		},
+		{
+			"name": "Documents",
+			"item": [
+				{
+					"name": "Create",
+					"id": "e4b95b94-f2ed-4b0b-9429-d1e34ab25ccf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "CNH",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+									"filesNotInWorkingDirectory": [
+										"/C:/Users/Casa/Downloads/QVCtshJM73qsjNKyTfJLbi61fAU8Yav5rVBxb79V.jpg"
+									],
+									"src": "/C:/Users/Casa/Downloads/QVCtshJM73qsjNKyTfJLbi61fAU8Yav5rVBxb79V.jpg"
+								},
+								{
+									"key": "owner_type",
+									"value": "User",
+									"type": "text"
+								},
+								{
+									"key": "owner_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/document"
+					},
+					"response": []
+				}
+			],
+			"id": "bd576127-07de-4349-9f05-270d2d3c12f7"
+		},
+		{
+			"name": "Legal Persons",
+			"item": [
+				{
+					"name": "Create",
+					"id": "0fa06e81-eebf-45aa-b162-8841124e0ab4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\" : \"01245145000159\",\r\n    \"businessEmail\" : \"person5@legal.com\",\r\n    \"corporateName\" : \"contact4@legal.com\",\r\n    \"fantasyName\" : \"Fantasy Name\",\r\n    \"activityId\" : \"12\",\r\n    \"dateConstitution\" : \"1980-10-30\",\r\n    \"amountMonthlyInvoicing\" : 50000,\r\n    \"amountShareCapital\" : 10000000,\r\n    \"isPoliticallyExposedPerson\" : false,\r\n    \"amountPatrimony\" : 20000000,\r\n    \"phone\" : {\r\n        \"ddd\" : \"11\",\r\n        \"type\" : \"COMERCIAL\",\r\n        \"number\" : \"912345678\"\r\n    },\r\n    \"address\" : {\r\n        \"publicPlace\" : \"Rua 1\",\r\n        \"number\" : \"100\",\r\n        \"zipCode\" : \"01000-000\",\r\n        \"neighborhood\" : \"Centro\",\r\n        \"isConfirmed\" : true,\r\n        \"type\" : \"COMMERCIAL\",\r\n        \"cityId\" : \"100\"        \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/legal-person"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"id": "f2e27eb3-e776-4a64-9f26-f6159f5d59eb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/legal-person/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"legal-person",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "601a4f1e-d1b8-472a-b8e9-6b4aa07dc798",
+									"key": "id",
+									"value": "9ae70c74-5776-43ae-833f-ef33ba74eded"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"id": "10c32e1a-298b-4973-a9c9-f5cdfb94bdb1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/legal-person/:id/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"legal-person",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"id": "ea5c9d69-d83c-4aa2-b1e4-4db352dbc342",
+									"key": "id",
+									"value": "02990625000173"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activate Company",
+					"id": "b0aadcc7-635a-4ab0-8e85-9b349bf49886",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/legal-person/:document/activate",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"legal-person",
+								":document",
+								"activate"
+							],
+							"variable": [
+								{
+									"id": "753fb2ff-3220-4515-a01f-225b7a213fbc",
+									"key": "document",
+									"value": "08395049000101"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "5524ead6-3f38-42fa-a30a-b7498c214fc1"
+		},
+		{
+			"name": "Pipeline",
+			"item": [
+				{
+					"name": "Update Status Users",
+					"id": "fee9ac07-f07b-4f1c-8552-5e7ddab58633",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"PENDINF\",\r\n    \"owner_type\" : \"User\",\r\n    \"owner_id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/pipeline/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pipeline",
+					"id": "12f49c33-1cfd-4393-be5c-05143305f296",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"ERROR\",\r\n    \"data\" : {\r\n        \"CNH_VERSO\" : \"Documento ilégivel\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/pipeline/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pipeline",
+					"id": "392d0cfe-b378-4bf0-ad7d-88ce24e35184",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
+				}
+			],
+			"id": "e5624baf-7788-460d-8b1b-6714900b3812"
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Pix",
+					"item": [
+						{
+							"name": "Charges",
+							"item": [
+								{
+									"name": "Create Static Pix",
+									"id": "9d963516-bcac-47b5-be86-43e5ddc9dc4c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\" : 25,\r\n    \"description\" : \"Testando pix static\",\r\n    \"additionalInformation\" : \"Pagamento somente hoje\",\r\n    \"key\" : \"12899935640\"\r\n} ",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/charge/create-static"
+									},
+									"response": []
+								},
+								{
+									"name": "Consult Static Pix",
+									"id": "51533c90-9078-455e-b3a0-2a88444d04ae",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{base_url}}/pix/charge/consult-static?guid=da1e2ad1-1b35-4b19-a68c-a6d464daa032",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"pix",
+												"charge",
+												"consult-static"
+											],
+											"query": [
+												{
+													"key": "guid",
+													"value": "da1e2ad1-1b35-4b19-a68c-a6d464daa032"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Dynamic Pix",
+									"id": "edb35b8d-3f19-4d6d-bb41-8f34bb5fa5e1",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\" : 25,\r\n    \"description\" : \"Testando pix static\",\r\n    \"key\" : \"12899935640\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/charge/create-dynamic"
+									},
+									"response": []
+								},
+								{
+									"name": "Consult Dynamic Pix",
+									"id": "a59f9053-e747-414e-84ac-ce2cd7bbeffd",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{base_url}}/pix/charge/consult-dynamic?guid=81c36f78-1ff4-4b9c-bdac-ecbf7735f2de",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"pix",
+												"charge",
+												"consult-dynamic"
+											],
+											"query": [
+												{
+													"key": "guid",
+													"value": "81c36f78-1ff4-4b9c-bdac-ecbf7735f2de"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Refund Pix",
+									"id": "f10f3cde-0c04-49ba-9138-b1606c3eed02",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"transactionId\" : \"d115a1c9-872b-4818-a321-9aea302c2cce\",\r\n    \"amount\" : 10\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/payment/refund"
+									},
+									"response": []
+								}
+							],
+							"id": "8fe763fc-0804-4574-b62d-8cd699fa238e"
+						},
+						{
+							"name": "Keys",
+							"item": [
+								{
+									"name": "Get My Keys",
+									"id": "9f5fdfa1-0c41-4508-9642-5cc6b629c694",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{access_token}}"
+											}
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": "{{base_url}}/pix/my-keys"
+									},
+									"response": [
+										{
+											"id": "f1b2017a-0218-4bb7-8e3c-83813997c853",
+											"name": "200 Ok",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-account-hash",
+														"value": "{{accoutnHash}}",
+														"type": "text"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"url": "{{base_url}}/pix/my-keys"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 04 Mar 2024 16:59:49 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"data\": [\n        {\n            \"type\": \"DOCUMENT\",\n            \"key\": \"12899935640\"\n        },\n        {\n            \"type\": \"EVP\",\n            \"key\": \"159c681d-9408-4bf2-a7a6-ef9e7950b3ba\"\n        },\n        {\n            \"type\": \"EVP\",\n            \"key\": \"169f9be8-dad5-41c6-8b2c-32a381158cdd\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Key",
+									"id": "d1c3b658-710e-419b-a846-31a6122ae40c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{access_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"entryType\" : \"EVP\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/create-key"
+									},
+									"response": [
+										{
+											"id": "7f35c43c-02bb-4967-8e5f-b19405e1e622",
+											"name": "200 OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "x-account-hash",
+														"value": "{{accoutnHash}}",
+														"type": "text"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"entryType\" : \"EVP\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/pix/create-key"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 05 Mar 2024 14:16:28 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"data\": {\n        \"key\": \"d4aaaa73-6789-46d2-b365-98d51d99d457\",\n        \"createdAt\": \"2024-03-05T14:16:26.990Z\"\n    }\n}"
+										},
+										{
+											"id": "7d06f9ef-cbac-49bc-a997-86a9dd546414",
+											"name": "422 Unprocessable Content",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "x-account-hash",
+														"value": "{{accoutnHash}}",
+														"type": "text"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"entryType\" : \"DOCUMENT\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{base_url}}/pix/create-key"
+											},
+											"status": "Unprocessable Content",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 04 Mar 2024 17:14:54 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "57"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"data\": {\n        \"errors\": [\n            \"Esta chave está sendo utilizada por outra conta, por favor, solicite a portabilidade para continuar.\"\n        ]\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Key with Auth - Phone",
+									"id": "182cd7e7-6d84-4fa9-821f-69d3cc0fd2d0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{access_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"sender\": \"SMS\",\r\n    \"receiver\": \"+5535997093399\",\r\n    \"smsMsg\": \"Aston Bank - Código totalmente secreto $code\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/create-key-auth"
+									},
+									"response": [
+										{
+											"id": "40b23557-39b7-4b62-a042-6d503d664a1f",
+											"name": "200 Ok",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-delbank-api-key",
+														"value": "PJPyJ2xGmyB9oDHyNIUwNOt1dgpgolBwcE16ybaKD5rYEc8ujLtarBP0nNw2FKdgK+5YJFciFwTdORlZsdaTzjEbKN5ut+Ag4xGy69bbtXJmzkzRDHry9ubYbMW4xFMb",
+														"type": "text"
+													}
+												],
+												"url": "{{base_url}}/pix/my-keys"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 28 Feb 2024 13:10:40 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": [\n        {\n            \"key\": \"+5511999975734\"\n        },\n        {\n            \"key\": \"+5579999189807\"\n        },\n        {\n            \"key\": \"+5579999966960\"\n        },\n        {\n            \"key\": \"300d9528-7917-4965-ac4d-f7dc7c561589\"\n        },\n        {\n            \"key\": \"32752023000149\"\n        },\n        {\n            \"key\": \"3fdc29e2-fa1c-433f-8156-0f46af371463\"\n        },\n        {\n            \"key\": \"47e8815e-5138-4d2a-a8b0-899e2cb753f5\"\n        },\n        {\n            \"key\": \"4bb691b4-3233-4469-b9ae-ebec0c3de9fa\"\n        },\n        {\n            \"key\": \"895cfa48-b314-49e5-853c-b587f256a659\"\n        },\n        {\n            \"key\": \"8e721f71-2c46-4910-a57c-8133f7546175\"\n        },\n        {\n            \"key\": \"95745d65-876f-4b2e-9b32-f939c062c5cf\"\n        },\n        {\n            \"key\": \"a99ba65c-41ce-42e2-bcc6-1fad1bf56d8f\"\n        },\n        {\n            \"key\": \"emersonbk1@gmail.com\"\n        },\n        {\n            \"key\": \"emersonbk15@gmail.com\"\n        },\n        {\n            \"key\": \"hdjd@jxjd.jd\"\n        },\n        {\n            \"key\": \"shingeki73@gmail.com\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Create Key with Auth - Email",
+									"id": "f4fb4296-518b-4c9a-abe0-7e8926b8b47a",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{access_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"sender\": \"EMAIL\",\r\n    \"receiver\": \"gustavomb2008@hotmail.com\",\r\n    \"htmlBodyEmail\" : \"<h1 style='color: red'>$code</h1>\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/create-key-auth"
+									},
+									"response": [
+										{
+											"id": "23474958-930a-4ed1-abf1-7db0aea6be8c",
+											"name": "200 Ok",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-delbank-api-key",
+														"value": "PJPyJ2xGmyB9oDHyNIUwNOt1dgpgolBwcE16ybaKD5rYEc8ujLtarBP0nNw2FKdgK+5YJFciFwTdORlZsdaTzjEbKN5ut+Ag4xGy69bbtXJmzkzRDHry9ubYbMW4xFMb",
+														"type": "text"
+													}
+												],
+												"url": "{{base_url}}/pix/my-keys"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 28 Feb 2024 13:10:40 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": [\n        {\n            \"key\": \"+5511999975734\"\n        },\n        {\n            \"key\": \"+5579999189807\"\n        },\n        {\n            \"key\": \"+5579999966960\"\n        },\n        {\n            \"key\": \"300d9528-7917-4965-ac4d-f7dc7c561589\"\n        },\n        {\n            \"key\": \"32752023000149\"\n        },\n        {\n            \"key\": \"3fdc29e2-fa1c-433f-8156-0f46af371463\"\n        },\n        {\n            \"key\": \"47e8815e-5138-4d2a-a8b0-899e2cb753f5\"\n        },\n        {\n            \"key\": \"4bb691b4-3233-4469-b9ae-ebec0c3de9fa\"\n        },\n        {\n            \"key\": \"895cfa48-b314-49e5-853c-b587f256a659\"\n        },\n        {\n            \"key\": \"8e721f71-2c46-4910-a57c-8133f7546175\"\n        },\n        {\n            \"key\": \"95745d65-876f-4b2e-9b32-f939c062c5cf\"\n        },\n        {\n            \"key\": \"a99ba65c-41ce-42e2-bcc6-1fad1bf56d8f\"\n        },\n        {\n            \"key\": \"emersonbk1@gmail.com\"\n        },\n        {\n            \"key\": \"emersonbk15@gmail.com\"\n        },\n        {\n            \"key\": \"hdjd@jxjd.jd\"\n        },\n        {\n            \"key\": \"shingeki73@gmail.com\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Confirm Key with Auth",
+									"id": "97d0c8bc-a257-4843-9268-d7daa81730e2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{access_token}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"entryType\" : \"EMAIL\",\r\n    \"key\" : \"gustavo@plastikastudio.com.br\",\r\n    \"authCode\" : \"4421\",\r\n    \"authId\" : \"cd64d7e3-b4d5-4dd0-b494-628eaa78d813\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/confirm-key-auth"
+									},
+									"response": [
+										{
+											"id": "b9026618-1025-47eb-8ec1-212c89737fca",
+											"name": "200 Ok",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-delbank-api-key",
+														"value": "PJPyJ2xGmyB9oDHyNIUwNOt1dgpgolBwcE16ybaKD5rYEc8ujLtarBP0nNw2FKdgK+5YJFciFwTdORlZsdaTzjEbKN5ut+Ag4xGy69bbtXJmzkzRDHry9ubYbMW4xFMb",
+														"type": "text"
+													}
+												],
+												"url": "{{base_url}}/pix/my-keys"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 28 Feb 2024 13:10:40 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": [\n        {\n            \"key\": \"+5511999975734\"\n        },\n        {\n            \"key\": \"+5579999189807\"\n        },\n        {\n            \"key\": \"+5579999966960\"\n        },\n        {\n            \"key\": \"300d9528-7917-4965-ac4d-f7dc7c561589\"\n        },\n        {\n            \"key\": \"32752023000149\"\n        },\n        {\n            \"key\": \"3fdc29e2-fa1c-433f-8156-0f46af371463\"\n        },\n        {\n            \"key\": \"47e8815e-5138-4d2a-a8b0-899e2cb753f5\"\n        },\n        {\n            \"key\": \"4bb691b4-3233-4469-b9ae-ebec0c3de9fa\"\n        },\n        {\n            \"key\": \"895cfa48-b314-49e5-853c-b587f256a659\"\n        },\n        {\n            \"key\": \"8e721f71-2c46-4910-a57c-8133f7546175\"\n        },\n        {\n            \"key\": \"95745d65-876f-4b2e-9b32-f939c062c5cf\"\n        },\n        {\n            \"key\": \"a99ba65c-41ce-42e2-bcc6-1fad1bf56d8f\"\n        },\n        {\n            \"key\": \"emersonbk1@gmail.com\"\n        },\n        {\n            \"key\": \"emersonbk15@gmail.com\"\n        },\n        {\n            \"key\": \"hdjd@jxjd.jd\"\n        },\n        {\n            \"key\": \"shingeki73@gmail.com\"\n        }\n    ]\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete Key",
+									"id": "b2cb4904-fd5b-4f89-abaa-673bb0fe9ddc",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{access_token}}"
+											}
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"entryType\" : \"DOCUMENT\",\r\n    \"key\" : \"12899935640\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/delete-key"
+									},
+									"response": [
+										{
+											"id": "7d80db81-621f-4a0d-9562-3babc195c12b",
+											"name": "200 Ok",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "x-delbank-api-key",
+														"value": "PJPyJ2xGmyB9oDHyNIUwNOt1dgpgolBwcE16ybaKD5rYEc8ujLtarBP0nNw2FKdgK+5YJFciFwTdORlZsdaTzjEbKN5ut+Ag4xGy69bbtXJmzkzRDHry9ubYbMW4xFMb",
+														"type": "text"
+													}
+												],
+												"url": "{{base_url}}/pix/my-keys"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Host",
+													"value": "localhost"
+												},
+												{
+													"key": "Connection",
+													"value": "close"
+												},
+												{
+													"key": "X-Powered-By",
+													"value": "PHP/8.2.13"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-cache, private"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 28 Feb 2024 13:10:40 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "60"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "59"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": [\n        {\n            \"key\": \"+5511999975734\"\n        },\n        {\n            \"key\": \"+5579999189807\"\n        },\n        {\n            \"key\": \"+5579999966960\"\n        },\n        {\n            \"key\": \"300d9528-7917-4965-ac4d-f7dc7c561589\"\n        },\n        {\n            \"key\": \"32752023000149\"\n        },\n        {\n            \"key\": \"3fdc29e2-fa1c-433f-8156-0f46af371463\"\n        },\n        {\n            \"key\": \"47e8815e-5138-4d2a-a8b0-899e2cb753f5\"\n        },\n        {\n            \"key\": \"4bb691b4-3233-4469-b9ae-ebec0c3de9fa\"\n        },\n        {\n            \"key\": \"895cfa48-b314-49e5-853c-b587f256a659\"\n        },\n        {\n            \"key\": \"8e721f71-2c46-4910-a57c-8133f7546175\"\n        },\n        {\n            \"key\": \"95745d65-876f-4b2e-9b32-f939c062c5cf\"\n        },\n        {\n            \"key\": \"a99ba65c-41ce-42e2-bcc6-1fad1bf56d8f\"\n        },\n        {\n            \"key\": \"emersonbk1@gmail.com\"\n        },\n        {\n            \"key\": \"emersonbk15@gmail.com\"\n        },\n        {\n            \"key\": \"hdjd@jxjd.jd\"\n        },\n        {\n            \"key\": \"shingeki73@gmail.com\"\n        }\n    ]\n}"
+										}
+									]
+								}
+							],
+							"id": "7da79dc5-5281-416b-8c5d-3fccade9b2ac"
+						},
+						{
+							"name": "Payments",
+							"item": [
+								{
+									"name": "QrCode Init",
+									"id": "35140e22-1519-4fb4-9217-e63f51261cd2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-account-hash",
+												"value": "{{accoutnHash}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"payload\" : \"00020126840014br.gov.bcb.pix0136d5f42561-4252-4470-b5af-c95978e53cdc0222Pagamento somente hoje520400005303986540525.005802BR5919GUSTAVO HENRIQUE DE6007ARACAJU62290525chargeVyAkfz596gNq74I3kk363048FDF\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/payment/qrcode/init"
+									},
+									"response": []
+								},
+								{
+									"name": "Finish payment",
+									"id": "4cd364c6-f570-4a6a-99ac-05d544e70d71",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\": 25,\r\n    \"description\": \"description\",\r\n    \"endToEndId\": \"E3822485720240318192510334806799\",\r\n    \"transactionId\": \"chargeh5jIUQId34rlJB4Rp7N\",\r\n    \"initiationType\": \"QR_CODE_STATIC\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/payment/qrcode/finish"
+									},
+									"response": []
+								}
+							],
+							"id": "a492a020-5355-413c-a05d-77762ee0aed9"
+						},
+						{
+							"name": "Find Person PIX",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6ce5ca72-01a3-4bc7-94eb-edf3cdba5cb7",
+										"exec": [
+											"if (responseCode.code === 200) {\r",
+											"    var jsonData = JSON.parse(responseBody);\r",
+											"    console.log(jsonData);\r",
+											"    postman.setEnvironmentVariable(\"endToEndId\", jsonData.data.endToEndId);\r",
+											"    // postman.setEnvironmentVariable(\"expires_in\", jsonData.expires_in);\r",
+											"    // postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);\r",
+											"    // postman.setEnvironmentVariable(\"token_type\", jsonData.token_type);\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "a8895c17-4c98-4484-b1e9-f01d7f569ba7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-account-hash",
+										"value": "{{accoutnHash}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"key\" : \"12899935640\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/pix/find-key"
+							},
+							"response": [
+								{
+									"id": "1152fb76-992f-458a-a4a0-48c7f49445aa",
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"key\" : \"5b0ac9a4-fad6-43f9-be70-6d7c9a2fad26\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/find-key"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 26 Jan 2024 13:40:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "58"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": {\n        \"endToEndId\": \"E3822485720240126134012261660661\",\n        \"key\": \"5b0ac9a4-fad6-43f9-be70-6d7c9a2fad26\",\n        \"beneficiary\": {\n            \"number\": \"29823\",\n            \"branch\": \"0001\",\n            \"type\": \"CURRENT\",\n            \"participant\": {\n                \"name\": \"DELCRED SCD S.A.\",\n                \"ispb\": \"38224857\"\n            },\n            \"holder\": {\n                \"name\": \"HOMOLOGACAO INTEGRACAO API\",\n                \"document\": \"***876977**\",\n                \"type\": \"NATURAL\"\n            }\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Make Transfer",
+							"id": "88d583e6-669a-46e2-863d-8747a5154d94",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-account-hash",
+										"value": "{{accoutnHash}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\" : 10,\r\n    \"description\" : \"TESTE PIX\",\r\n    \"endToEndId\" : \"E3822485720240315201603176549307\",\r\n    \"initiationType\": \"KEY\",\r\n    \"saveContact\" : true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/pix/make-transfer"
+							},
+							"response": [
+								{
+									"id": "349063d4-4868-4568-aac2-cc467ae6876f",
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\" : 1000,\r\n    \"description\" : \"TESTE PIX\",\r\n    \"endToEndId\" : \"E3822485720240126134012261660661\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/make-transfer"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 26 Jan 2024 13:40:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": {\n        \"id\": \"9fcec1d4-c523-4f76-8ac4-5424bc507b29\",\n        \"endToEndId\": \"E3822485720240126134012261660661\",\n        \"externalId\": \"E3822485720240126134012261660661\",\n        \"transactionNsu\": 1051777,\n        \"status\": \"PIX_PROCESSING\",\n        \"type\": \"PIX_KEY\",\n        \"amount\": 1000,\n        \"createdAt\": \"2024-01-26T13:40:49.135Z\",\n        \"description\": \"TESTE PIX\",\n        \"payer\": {\n            \"number\": \"31712\",\n            \"branch\": \"0001\",\n            \"type\": \"CURRENT\",\n            \"holder\": {\n                \"document\": \"32752023000149\",\n                \"name\": \"bxxdbde\",\n                \"type\": \"LEGAL\"\n            },\n            \"participant\": {\n                \"name\": \"DELBANK\",\n                \"ispb\": \"38224857\"\n            }\n        },\n        \"beneficiary\": {\n            \"number\": \"29823\",\n            \"branch\": \"0001\",\n            \"type\": \"CURRENT\",\n            \"holder\": {\n                \"document\": \"30287697789\",\n                \"name\": \"HOMOLOGACAO INTEGRACAO API\",\n                \"type\": \"NATURAL\"\n            },\n            \"participant\": {\n                \"name\": \"DELBANK\",\n                \"ispb\": \"38224857\"\n            }\n        },\n        \"balance\": {\n            \"balancePrevious\": 696969126693.67,\n            \"currentBalance\": 696969125693.67\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Make Transfer Internal",
+							"id": "df93eabf-617e-437c-8285-e5571fc27aa8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-account-hash",
+										"value": "{{accoutnHash}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\" : 1,\r\n    \"description\" : \"TESTE PIX\",\r\n    \"beneficiaryAccount\" : \"37451\",\r\n    \"saveContact\" : true\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/pix/make-transfer"
+							},
+							"response": [
+								{
+									"id": "b173b139-3edf-422e-bbea-904bf388b91a",
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\" : 1000,\r\n    \"description\" : \"TESTE PIX\",\r\n    \"endToEndId\" : \"E3822485720240126134012261660661\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/pix/make-transfer"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 26 Jan 2024 13:40:50 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": {\n        \"id\": \"9fcec1d4-c523-4f76-8ac4-5424bc507b29\",\n        \"endToEndId\": \"E3822485720240126134012261660661\",\n        \"externalId\": \"E3822485720240126134012261660661\",\n        \"transactionNsu\": 1051777,\n        \"status\": \"PIX_PROCESSING\",\n        \"type\": \"PIX_KEY\",\n        \"amount\": 1000,\n        \"createdAt\": \"2024-01-26T13:40:49.135Z\",\n        \"description\": \"TESTE PIX\",\n        \"payer\": {\n            \"number\": \"31712\",\n            \"branch\": \"0001\",\n            \"type\": \"CURRENT\",\n            \"holder\": {\n                \"document\": \"32752023000149\",\n                \"name\": \"bxxdbde\",\n                \"type\": \"LEGAL\"\n            },\n            \"participant\": {\n                \"name\": \"DELBANK\",\n                \"ispb\": \"38224857\"\n            }\n        },\n        \"beneficiary\": {\n            \"number\": \"29823\",\n            \"branch\": \"0001\",\n            \"type\": \"CURRENT\",\n            \"holder\": {\n                \"document\": \"30287697789\",\n                \"name\": \"HOMOLOGACAO INTEGRACAO API\",\n                \"type\": \"NATURAL\"\n            },\n            \"participant\": {\n                \"name\": \"DELBANK\",\n                \"ispb\": \"38224857\"\n            }\n        },\n        \"balance\": {\n            \"balancePrevious\": 696969126693.67,\n            \"currentBalance\": 696969125693.67\n        }\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "1e73c994-4319-44ea-84b4-908b40a92a12"
+				},
+				{
+					"name": "Internal",
+					"item": [
+						{
+							"name": "Make Transfer",
+							"id": "759b5159-31d6-4591-baf7-6580d3792cc9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-account-hash",
+										"value": "{{accoutnHash}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\" : 8,\r\n    \"description\" : \"A\",\r\n    \"beneficiaryAccount\" : \"31712\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/internal/transfer"
+							},
+							"response": []
+						}
+					],
+					"id": "65230f61-d19b-48f9-aa53-ae640f2c5906"
+				},
+				{
+					"name": "Payments",
+					"item": [
+						{
+							"name": "BankSlip",
+							"item": [
+								{
+									"name": "Get Info",
+									"id": "e7ee5741-0caa-486c-b18c-310b2d95228c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"code\" : \"826700000043182300191000124039240237531430005821\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/payment/bank-slip/info"
+									},
+									"response": []
+								},
+								{
+									"name": "Confirm payment",
+									"id": "1c4c085f-a921-44e2-a923-6d152f687d3c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"amount\" : 418.23,\r\n    \"barCode\" : \"826700000043182300191000124039240237531430005821\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{base_url}}/payment/bank-slip/confirm"
+									},
+									"response": []
+								}
+							],
+							"id": "86e6200f-119c-4487-9b2b-31e6708ea037"
+						}
+					],
+					"id": "0074a4c8-a5e3-4d3b-b906-3b26ee56bbca"
+				},
+				{
+					"name": "Transfers",
+					"item": [
+						{
+							"name": "Check Transfer",
+							"id": "fc1839bb-de90-401d-9a53-0cf83ee15fdf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/transactions/:transferId",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"transactions",
+										":transferId"
+									],
+									"variable": [
+										{
+											"id": "6cdf2078-e59b-4b68-94b7-2f7f89ca6537",
+											"key": "transferId",
+											"value": "ca5fcb3b-cced-4212-974c-82861293f145"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a0a316c6-0fc1-480c-9758-f17bbf95cb4e",
+									"name": "200 OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/transactions/:transferId",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"transactions",
+												":transferId"
+											],
+											"variable": [
+												{
+													"key": "transferId",
+													"value": "e32afa95-2fef-4d8b-9f56-a2a0c5951d10"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.2.13"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 26 Jan 2024 13:39:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "60"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "59"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"responseTime": null,
+									"body": "{\n    \"originalResponse\": {},\n    \"originalResponseCode\": 200,\n    \"originalResponseMessage\": \"OK\",\n    \"success\": true,\n    \"body\": {\n        \"id\": \"e32afa95-2fef-4d8b-9f56-a2a0c5951d10\",\n        \"endToEndId\": \"E3822485720240126133421836541884\",\n        \"externalId\": \"E3822485720240126133421836541884\",\n        \"transactionNsu\": 1051770,\n        \"status\": \"PIX_EFFECTIVE\",\n        \"type\": \"PIX_KEY\",\n        \"amount\": 500,\n        \"createdAt\": \"2024-01-26T13:34:45.556Z\",\n        \"description\": \"TESTE PIX\",\n        \"payer\": {\n            \"number\": \"31712\",\n            \"branch\": \"0001\",\n            \"type\": \"CURRENT\",\n            \"holder\": {\n                \"document\": \"32752023000149\",\n                \"name\": \"bxxdbde\",\n                \"type\": \"LEGAL\"\n            },\n            \"participant\": {\n                \"name\": \"DELCRED SCD S.A.\",\n                \"ispb\": \"38224857\"\n            }\n        },\n        \"beneficiary\": {\n            \"number\": \"29823\",\n            \"branch\": \"0001\",\n            \"type\": \"CURRENT\",\n            \"holder\": {\n                \"document\": \"30287697789\",\n                \"name\": \"HOMOLOGACAO INTEGRACAO API\",\n                \"type\": \"NATURAL\"\n            },\n            \"participant\": {\n                \"name\": \"DELBANK\",\n                \"ispb\": \"38224857\"\n            }\n        }\n    }\n}"
+								}
+							]
+						}
+					],
+					"id": "7adae576-aa16-41a5-924f-2c4985ff0b0d"
+				},
+				{
+					"name": "Ted",
+					"item": [
+						{
+							"name": "Make Transfer",
+							"id": "e3fdea7d-7d27-4581-b4c5-772b6b00088d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\" : 10,\r\n    \"description\" : \"Ted\",\r\n    \"beneficiary\" : {\r\n        \"number\" : \"46441\",\r\n        \"branch\" : \"0007\",\r\n        \"type\" : \"CURRENT\", //CURRENT - Conta Corrente / PAYMENT - Conta Pagamento / SAVING - Conta Poupança / SALARY - Conta Salário\r\n        \"participantIspb\" : \"04902979\",\r\n        \"holder\" : {\r\n            \"document\" : \"12899935640\",\r\n            \"name\" : \"Gustavo Melo\",\r\n            \"type\" : \"NATURAL\" // NATURAL - Pessoa Física / LEGAL - Pessoa Jurídica\r\n        }\r\n    },\r\n    \"saveContact\" : true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/ted/transfer"
+							},
+							"response": []
+						}
+					],
+					"id": "3d1401c1-7ae4-497e-a4a7-1166e8ab22f4"
+				},
+				{
+					"name": "Transactions Signature",
+					"item": [
+						{
+							"name": "Find Signatures",
+							"id": "f8d9560e-970b-4c5f-9550-cf8f492f4729",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Signin",
+							"id": "9f757411-ddde-45ae-8b81-564c36156bef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"preapprovall_id\": 15 \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/transfer/signatures"
+							},
+							"response": []
+						}
+					],
+					"id": "e08b8733-a56d-4cab-ba24-87084aeb2d61"
+				},
+				{
+					"name": "Make Transfer",
+					"id": "0b9b73ba-cb18-4549-9ff7-5fd48da0eea7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transferType\":\"pix\",\r\n    \"key\" : \"12899935640\",\r\n    \"amount\":500,\r\n    \"endToEndId\":\"E3822485720240815144827249251484\",\r\n    \"saveContact\":true,\r\n    \"receiver\": {\r\n        \"number\": \"37451\",\r\n        \"branch\": \"0001\",\r\n        \"type\": \"CURRENT\",\r\n        \"participant\": {\r\n            \"name\": \"DELCRED SCD S.A.\",\r\n            \"ispb\": \"38224857\"\r\n        },\r\n        \"holder\": {\r\n            \"name\": \"GUSTAVO MELO\",\r\n            \"document\": \"***999356**\",\r\n            \"type\": \"NATURAL\"\r\n        }\r\n    },\r\n    \"pincode\": {\r\n        \"hash\": \"{{pincode_hash}}\",\r\n        \"event\": \"TRANSFER_PIX\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/transfer"
+					},
+					"response": []
+				}
+			],
+			"id": "242bcce6-f15a-4e21-bb25-2ad697b98fe5"
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Terms",
+					"item": [
+						{
+							"name": "Terms Signature",
+							"id": "17631d81-1826-4402-83e0-de67e2d9fdc9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"term\" : 1,\r\n    \"legal_person_id\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/terms"
+							},
+							"response": []
+						},
+						{
+							"name": "Terms Verify Signature",
+							"id": "a95ef5d2-7be3-4af5-acaa-91f2ac41c0cd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"term\" : 2,\r\n    \"legal_person_id\" : 20\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/terms/verify"
+							},
+							"response": []
+						},
+						{
+							"name": "Terms Available",
+							"id": "2151db87-ea24-4339-8d89-fb00875fec36",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/terms"
+							},
+							"response": []
+						},
+						{
+							"name": "Terms Request Token",
+							"id": "35d60e58-409c-4877-a1bb-4fa095095bfe",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{base_url}}/terms/token"
+							},
+							"response": []
+						},
+						{
+							"name": "Terms Available - Legal Persons",
+							"id": "5c8fae19-c2dd-4b86-adec-65c86933926e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Term Legal Person",
+							"id": "e2e79b54-6e33-4fd0-928a-8bfa64afa0e3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": ""
+							},
+							"response": []
+						}
+					],
+					"id": "757b11a2-4568-426b-8670-24c22d221062"
+				},
+				{
+					"name": "Create",
+					"id": "b2b11520-b4fa-4fa0-9a79-c2c28ab13e58",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Gustavo Melo\",\r\n    \"email\" : \"gustavo1@plastikastudio.com.br\",\r\n    \"password\" : \"password\",\r\n    \"document\" : \"43648539094\",\r\n    \"monthlyInvoicing\" : 5200,\r\n    \"birthDate\" : \"1994-04-15\",\r\n    \"educationLevel\" : \"DOCTORATE_DEGREE\",\r\n    \"maritalStatus\" : \"SINGLE\",\r\n    \"gender\" : \"MALE\",\r\n    \"phone\" : {\r\n        \"ddd\" : \"35\",\r\n        \"number\" : \"997093399\",\r\n        \"type\" : \"CELL\"\r\n    }, \r\n    \"address\" : {\r\n        \"publicPlace\" : \"R UM\",\r\n        \"number\" : \"100\",\r\n        \"zipCode\" : \"30690330\",\r\n        \"neighborhood\" : \"CENTRO\",\r\n        \"isConfirmed\" : true,\r\n        \"type\" : \"RESIDECIAL\",\r\n        \"cityId\" : 100,\r\n        \"cityName\" : \"São Paulo\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"id": "ac358f29-c6ff-404d-82ee-c5eaec69d85c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "23fefa14-0bb4-4a50-ad7c-f81d2de2947b",
+									"key": "id",
+									"value": "79"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"id": "233ddb13-6c46-43c7-befd-18ab8609ebf1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Global-Key",
+								"value": "FVA3ebDI6I78y0lVNeqZzmkpY8MgweWbo5kWXZ3NhTPzsMPpLfyQ7t0NDd2No19/ShGEb/jW8Y0IYB0Z2CC0Ylz1KsmMtj9WEyTcfwzOdb4K568G5RbK8Po6cWFApede7eNrbRldb/i3FDlG+CYYzKlLJ9Bqw53zyNho9g+MB+OPp5clqFaz7s6FDi142S9PMVLhswqaz1YvsLLAztTI1aoiiV18w31VpxEveI9J0HmubM9y1WMlw3rLGqkv0i/lPocMYVDHnzricD8G7hqTjFwY+BHCeVsa2IoR7h6NDLFMVuVCt9FBujz7ckGpSAg1U3tlGMtYJ9jyq86bneOLNccg5uXUnMKEdyLqlDw86JFuV5S2lVLx3hA8DNeFVP4OY7uzh4pia5PePYxfcz1at5A609A8JMAf18VouauCPPv0dm83yf6Ez2zyVUs60+vjgMTN4wMI0/9csxj767l4xkUb1EsEz4ASkyg9IK06DZ/bi0iM52W+r+1dUa/v5mheV6FBi007JJR2f0TGsHUAY8lWy8Knbu1m1rnlenbZHEIA6sR2ysbgN8BRe0K/WYpQ0rBY8QPVK2BrrRF0TmTrRfcOuQ3gQQRXUXi+ZCux44K5A8jAwGzucD5FlvpQCwLaj1O4PWRlwut7Hk4tjbq+IQNhEQoKJmAax5s8JwS6OaY=",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "{{base_url}}/user/status"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"id": "441a8757-35ce-491f-803b-accecaf0b057",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sem complemetn\",\r\n    \"email\": null,\r\n    \"phone\": \"48998171394\",\r\n    \"gender\": \"MALE\",\r\n    \"password\": \"12345678\",\r\n    \"address\": {\r\n        \"uf\": \"PR\",\r\n        \"ddd\": \"41\",\r\n        \"siafi\": \"7535\",\r\n        \"number\": \"320\",\r\n        \"zipCode\": \"80010-000\",\r\n        \"cityName\": \"Curitiba\",\r\n        \"complement\": null,\r\n        \"isConfirmed\": \"YES\",\r\n        \"publicPlace\": \"Rua José Loureiro\",\r\n        \"neighborhood\": \"Centro\"\r\n    },\r\n    \"document\": \"18603965006\",\r\n    \"lastName\": \" complemetn\",\r\n    \"birthDate\": \"2001-09-14\",\r\n    \"firstName\": \"sem\",\r\n    \"documentBack\": \"temporary/user-documents/kehtvnpnx24ivnqjqaeuto6ex1s7xsoy.png\",\r\n    \"documentType\": \"cnh\",\r\n    \"documentFront\": \"temporary/user-documents/ombpv4boav0w44iyxnexjf8a60eavb0p.png\",\r\n    \"maritalStatus\": \"SINGLE\",\r\n    \"documentSelfie\": \"temporary/user-documents/6qdfhp55qn6zmpoiild9b316fo7ppyq0.png\",\r\n    \"educationLevel\": \"ILLITERATE\",\r\n    \"monthlyInvoicing\": \"5800\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/user-update"
+					},
+					"response": []
+				}
+			],
+			"id": "6cb37bfe-2d55-46d7-ad7c-9fe133aff2da"
+		},
+		{
+			"name": "Utilities",
+			"item": [
+				{
+					"name": "Find States",
+					"id": "6ab998b4-7eea-4cc4-82ed-d86023b68fc7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/utilities/states"
+					},
+					"response": []
+				},
+				{
+					"name": "Parameters Person Legal",
+					"id": "d0ad2639-9956-43b4-9862-32a54c6fa44f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/v1/parameters-person-legal"
+					},
+					"response": []
+				},
+				{
+					"name": "Find Cities",
+					"id": "5ca09dc1-75d8-471c-8d4a-748b2a7d9331",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/utilities/cities"
+					},
+					"response": []
+				},
+				{
+					"name": "Find Address by Zipcode",
+					"id": "475e7045-413b-4a0d-8090-adb9bc4218f5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/utilities/zipcode/:zipcode",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"utilities",
+								"zipcode",
+								":zipcode"
+							],
+							"variable": [
+								{
+									"id": "caf111c7-7e37-4e4b-9660-5f7512dd06f9",
+									"key": "zipcode",
+									"value": "37115000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "73d6a58f-1738-4781-b6cb-e16e0e5ab70b"
+		},
+		{
+			"name": "Webhooks",
+			"item": [
+				{
+					"name": "Listeners",
+					"item": [
+						{
+							"name": "Charge Paid Event",
+							"id": "77595e65-0fe1-46ec-9d8c-4fb3849a6c77",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"nsu\":513,\r\n   \"correlationId\":\"217c34be-b374-4e33-9ae2-1b46f14b7116\",\r\n   \"referenceId\":\"E3822485720230705211537850921369\",\r\n   \"source\":\"SPI\",\r\n   \"amount\":12.12,\r\n   \"createdAt\":\"2023-07-05T17:52:33Z\",\r\n   \"payer\":{\r\n      \"name\":\"MARCONI DO NASCIMENTO OLIVEIRA\",\r\n      \"document\":\"12399999999\"\r\n   },\r\n   \"proof\":{\r\n      \"endToEndId\":\"E3822485720230705211537850921369\",\r\n      \"transactionId\":\"chargeCqkFlaENmal5NrPK58J\",\r\n      \"key\":\"5b0ac9a4-fad6-43f9-be70-6d7c9a2fad26\",\r\n      \"amount\":12.12,\r\n      \"payer\":{\r\n         \"number\":\"10065\",\r\n         \"branch\":\"0001\",\r\n         \"type\":\"CURRENT\",\r\n         \"holder\":{\r\n            \"name\":\"Marconi do Nascimento Oliveira\",\r\n            \"document\":\"02599999908\"\r\n         },\r\n         \"participant\":{\r\n            \"ispb\":\"38224857\",\r\n            \"name\":\"DELCRED SCD S.A.\"\r\n         }\r\n      },\r\n      \"payee\":{\r\n         \"number\":\"29823\",\r\n         \"branch\":\"0001\",\r\n         \"type\":\"CURRENT\",\r\n         \"holder\":{\r\n            \"name\":\"HOMOLOGACAO INTEGRACAO API\",\r\n            \"document\":\"30287697789\"\r\n         },\r\n         \"participant\":{\r\n            \"ispb\":\"38224857\",\r\n            \"name\":\"DELCRED SCD S.A.\"\r\n         }\r\n      }\r\n   }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/webhooks/listeners/charge-paid/70b127e0-9b95-4393-b351-0b5c14ddf5d2"
+							},
+							"response": []
+						},
+						{
+							"name": "Whitelabel Customer Approved Event",
+							"id": "e33a9b8f-7900-450f-bc9e-edabcb30bccc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teste\": \"Testando Webhook\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/webhooks/listeners/whitelabel-customer-approved/12457"
+							},
+							"response": []
+						},
+						{
+							"name": "Whitelabel Customer Documentation Rejected Event",
+							"id": "81284901-2020-4382-ab19-e99437ec6072",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teste\": \"Testando Webhook\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/webhooks/listeners/whitelabel-customer-documentation-rejected/12457"
+							},
+							"response": []
+						},
+						{
+							"name": "Pix Received Event",
+							"id": "000d6aff-efdd-4c28-9832-0a516684ed96",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"teste\": \"Testando Webhook\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/webhooks/listeners/pix-received/12457"
+							},
+							"response": []
+						},
+						{
+							"name": "Pix Payment Updated Event",
+							"id": "7f2da788-646a-4270-b15f-9a81ba198564",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"eventType\":\"PIX_PAYMENT_ERROR\",\r\n   \"endToEndId\":\"E3822485720231013015126180935816\",\r\n   \"idempotencyKey\":\"idempotencyKey12345\",\r\n   \"status\":\"PIX_ERROR\",\r\n   \"error\":{\r\n      \"code\":\"AC06\",\r\n      \"description\":\"Conta transacional do usuário recebedor encontra-se bloqueada.\"\r\n   },\r\n   \"amount\":100.0,\r\n   \"createdAt\":\"2023-10-13T04:51:26.84Z\",\r\n   \"description\":\"description\",\r\n   \"payer\":{\r\n      \"number\":\"12345\",\r\n      \"branch\":\"0001\",\r\n      \"type\":\"CURRENT\",\r\n      \"participant\":{\r\n         \"ispb\":\"38224857\"\r\n      },\r\n      \"holder\":{\r\n         \"name\":\"EXAMPLE EXAMPLE\",\r\n         \"document\":\"11111111111111\",\r\n         \"type\":\"LEGAL\"\r\n      }\r\n   },\r\n   \"beneficiary\":{\r\n      \"number\":\"12345\",\r\n      \"branch\":\"3231\",\r\n      \"type\":\"CURRENT\",\r\n      \"participant\":{\r\n         \"ispb\":\"90400888\"\r\n      },\r\n      \"holder\":{\r\n         \"name\":\"HOLDER NAME\",\r\n         \"document\":\"11111111111\",\r\n         \"type\":\"NATURAL\"\r\n      }\r\n   }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/webhooks/listeners/pix-payment-updated/70b127e0-9b95-4393-b351-0b5c14ddf5d2"
+							},
+							"response": []
+						},
+						{
+							"name": "Transaction Created Event",
+							"id": "4abe1590-d17f-4a41-aeb4-061fce90e466",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"C73c490b1-74f2-4759-ac87-f143f1d8ab37\",\r\n  \"nsu\": 2197474,\r\n  \"amount\": 10.0,\r\n  \"createdAt\": \"2024-03-12T00:51:12.866Z\",\r\n  \"type\": \"CREDIT_TRANSFER_INTERNAL\",\r\n  \"transactionType\": {\r\n    \"name\": \"CREDIT_TRANSFER_INTERNAL\",\r\n    \"description\": \"Transferência recebida\",\r\n    \"isCredit\": true\r\n  },\r\n  \"modality\": \"CREDIT\",\r\n  \"balance\": {\r\n    \"balancePrevious\": 1367.0,\r\n    \"currentBalance\": 1377.0\r\n  },\r\n  \"proof\": {\r\n    \"id\": \"73c490b1-74f2-4759-ac87-f143f1d8ab37\",\r\n    \"externalId\": \"D1203202400511273C4\",\r\n    \"status\": \"EFFECTIVE\",\r\n    \"type\": \"INTERNAL\",\r\n    \"amount\": 10.0,\r\n    \"payer\": {\r\n      \"number\": \"31712\",\r\n      \"branch\": \"0001\",\r\n      \"type\": \"CURRENT\",\r\n      \"holder\": {\r\n        \"document\": \"32752023000149\",\r\n        \"name\": \"bxxdbde\",\r\n        \"type\": \"LEGAL\"\r\n      },\r\n      \"participant\": {\r\n        \"name\": \"DELBANK\",\r\n        \"ispb\": \"38224857\"\r\n      }\r\n    },\r\n    \"beneficiary\": {\r\n      \"number\": \"37451\",\r\n      \"branch\": \"0001\",\r\n      \"type\": \"CURRENT\",\r\n      \"holder\": {\r\n        \"document\": \"12899935640\",\r\n        \"name\": \"GUSTAVO MELO\",\r\n        \"type\": \"NATURAL\"\r\n      },\r\n      \"participant\": {\r\n        \"name\": \"DELBANK\",\r\n        \"ispb\": \"38224857\"\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/webhooks/listeners/transaction-created/70b127e0-9b95-4393-b351-0b5c14ddf5d2"
+							},
+							"response": []
+						}
+					],
+					"id": "4c4431fd-5065-460c-85b9-4a15b39f4793"
+				},
+				{
+					"name": "Create",
+					"id": "7d00efe6-e356-48d1-8583-9950674f59c0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventType\" : \"PIX_RECEIVED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/webhooks/create"
+					},
+					"response": []
+				},
+				{
+					"name": "List All",
+					"id": "7b1bc627-9ccb-4650-b103-b93be11bca2f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/webhooks?account=70b127e0-9b95-4393-b351-0b5c14ddf5d2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"webhooks"
+							],
+							"query": [
+								{
+									"key": "account",
+									"value": "70b127e0-9b95-4393-b351-0b5c14ddf5d2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"id": "cf4cf2fb-5207-46c5-aee5-2193bc32c8e2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account\" : \"70b127e0-9b95-4393-b351-0b5c14ddf5d2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/webhooks/delete/:delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"webhooks",
+								"delete",
+								":delete"
+							],
+							"variable": [
+								{
+									"id": "155965d7-e142-4400-9405-5ed0a17f1842",
+									"key": "delete",
+									"value": "187"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "45c62999-cf7c-4e7f-a4d0-543db871f597"
+		},
+		{
+			"name": "Account Leads",
+			"item": [
+				{
+					"name": "Create or Update",
+					"id": "7d113333-1302-42b1-810a-b45c3285df30",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": \"12345678901\",\r\n    \"last_step\": \"nome\",\r\n    \"data\": {\r\n        \"document\": \"12345678901\",\r\n        \"nome\": \"Gustavo Henrique de Melo\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/account-leads/update"
+					},
+					"response": []
+				}
+			],
+			"id": "3c40aabd-8c20-42c0-b5e2-5b4605ec602d"
+		},
+		{
+			"name": "Consultas",
+			"item": [
+				{
+					"name": "CPF",
+					"id": "477b9203-5c4c-4efc-9cc1-f1c2611a9b17",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/consultas/empresas/cpf"
+					},
+					"response": []
+				},
+				{
+					"name": "CNPJ",
+					"id": "88486975-ff76-4aa0-9cc7-4b0833df7ff3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/consultas/empresas/cnpj/:cnpj",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"consultas",
+								"empresas",
+								"cnpj",
+								":cnpj"
+							],
+							"variable": [
+								{
+									"id": "39f48d1f-48ed-403e-afca-a3afb3caeb91",
+									"key": "cnpj",
+									"value": "52437416000175"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "2f2f41de-93ef-4388-8ced-3fec3eb5afb5"
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "All",
+					"id": "c02d7e1d-f56e-48b2-bf68-3cf4b3e7466a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/notifications",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "unread",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read notify",
+					"id": "822b8bd7-eb05-4ccb-a4c6-36308755678c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/notifications?unread=true",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "unread",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read all notifications",
+					"id": "bae63534-14ea-43d5-840c-fe56f21225a6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/notifications/read/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Notify",
+					"id": "4cf66446-4157-40a5-b3d7-9b767451e43e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://app.stage.astonbank.com.br/notify/:id",
+							"protocol": "https",
+							"host": [
+								"app",
+								"stage",
+								"astonbank",
+								"com",
+								"br"
+							],
+							"path": [
+								"notify",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "36f7f2fd-6f48-4f96-89e6-a93d0cf0ccf2",
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "22771811-833c-4390-9024-ff2862893d16"
+		},
+		{
+			"name": "Simulate Loans",
+			"item": [
+				{
+					"name": "Pincode",
+					"item": [
+						{
+							"name": "Create Pincode",
+							"id": "647b1e88-e18d-4b3c-80d5-7309211838ee",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\" : \"(35) 9 9709-3399\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/simulate-loans/pincode"
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Pincode",
+							"id": "83d36b89-3947-482e-b020-6ab6bdcfdb71",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\" : \"(35) 9 9709-3399\",\r\n    \"code\" : \"934298\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/simulate-loans/pincode/validate"
+							},
+							"response": []
+						}
+					],
+					"id": "990e48bd-4526-4310-9622-389bee4a7b58"
+				},
+				{
+					"name": "Finish Proccess",
+					"item": [
+						{
+							"name": "Create Loan",
+							"id": "f7dbb106-e2b0-437a-a449-e12719d2cec9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/simulate-loans/:id/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"simulate-loans",
+										":id",
+										"create"
+									],
+									"variable": [
+										{
+											"id": "7d7f6908-dc72-46fa-aec9-f6cdf12e7b3e",
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Upload Documents",
+							"id": "b0e66935-0728-4cd4-901b-22ad926f3f28",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "CCB_GERADA",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+											"filesNotInWorkingDirectory": [
+												"/C:/Users/Gustavo/Pictures/Screenshots/Captura de tela 2024-09-09 142652.png"
+											],
+											"src": "/C:/Users/Gustavo/Pictures/Screenshots/Captura de tela 2024-09-09 142652.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/simulate-loans/:id/:type/upload",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"simulate-loans",
+										":id",
+										":type",
+										"upload"
+									],
+									"variable": [
+										{
+											"id": "6b80207c-d2fa-40a9-ab5e-cac2e150b125",
+											"key": "id",
+											"value": "1"
+										},
+										{
+											"id": "cee5784a-2a2f-423c-941b-15ca51396abd",
+											"key": "type",
+											"value": "CCB_GERADA"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "caf0df1c-4333-423e-9d64-b84bf9fa438a"
+				},
+				{
+					"name": "Create Simulation",
+					"id": "bd96b769-5709-47d3-ab75-082ac90888ac",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\" : {\r\n        \"name\" : \"Marcelo Melo Junior 7\",\r\n        \"phone\" : \"35997093399\",\r\n        \"cpf\" : \"12899935651\",\r\n        \"agreement_type\" : \"INSS\",\r\n        \"modality\" : \"Débito\",\r\n        \"comunication_channel\": \"sms\", // whatsapp\r\n        \"amount\" : 500,\r\n        \"number_installments\" : 12,\r\n        \"address\" : {\r\n            \"zip_code\": \"30690330\",\r\n            \"public_place\" : \"Rua Um\",\r\n            \"number\": 100,\r\n            \"complement\": \"Casa\",\r\n            \"neighborhood\" : \"Centro\",\r\n            \"city\": \"Belo Horizonte\",\r\n            \"state\" : \"MG\"\r\n        },\r\n        \"bank_account\" : {\r\n            \"agency\": \"0001\",\r\n            \"number\" : \"1487\",\r\n            \"bank\" : \"NU Pagamentos SA\",\r\n            \"type\" : \"Corrente\"\r\n        },\r\n        \"professional_info\" : {\r\n            \"occupation\" : \"Desenvolvedor de Software\",\r\n            \"registration_number\": \"131231231\",\r\n            \"monthly_income\": 123456,\r\n            \"paying_agency\": \"Outros\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/simulate-loans"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Simulation",
+					"id": "90d59ea5-477b-4f9b-bc1b-0f9c4cc28a68",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\" : {\r\n        \"agreement_type\" : \"INSS\",\r\n        \"modality\" : \"Débito\",\r\n        \"amount\" : 1200,\r\n        \"number_installments\" : 6,\r\n        \"name\" : \"Marcelo Melo Jr\",\r\n        \"address\" : {\r\n            \"zip_code\": \"30690330\",\r\n            \"public_place\" : \"Rua Um\",\r\n            \"number\": 100,\r\n            \"complement\": \"Casa\",\r\n            \"neighborhood\" : \"Centro\",\r\n            \"city\": \"Belo Horizonte\",\r\n            \"state\" : \"MG\"\r\n        },\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/simulate-loans/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"simulate-loans",
+								":id"
+							],
+							"variable": [
+								{
+									"id": "e2378fe1-9efe-418e-ba3f-fbce164ed90c",
+									"key": "id",
+									"value": "639784e4-0de3-4f37-8f78-0a68f9628dac"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Simulation",
+					"id": "b573d300-da31-48b2-8803-d30d44482ecc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\" : {\r\n        \"name\" : \"Marcelo Melo Junior 4\",\r\n        \"phone\" : \"35997093399\",\r\n        \"cpf\" : \"12899935651\",\r\n        \"agreement_type\" : \"INSS\",\r\n        \"modality\" : \"Débito\",\r\n        \"amount\" : 500,\r\n        \"number_installments\" : 12,\r\n        \"address\" : {\r\n            \"zip_code\": \"30690330\",\r\n            \"public_place\" : \"Rua Um\",\r\n            \"number\": 100,\r\n            \"complement\": \"Casa\",\r\n            \"neighborhood\" : \"Centro\",\r\n            \"city\": \"Belo Horizonte\",\r\n            \"state\" : \"MG\"\r\n        },\r\n        \"bank_account\" : {\r\n            \"agency\": \"0001\",\r\n            \"number\" : \"1487\",\r\n            \"bank\" : \"NU Pagamentos SA\",\r\n            \"type\" : \"Corrente\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/simulate-loans"
+					},
+					"response": []
+				}
+			],
+			"id": "27db3b02-413a-478d-bc8e-f3181841ba02"
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "2 - Create Provider",
+					"id": "6e313c9a-8e88-4b98-89e6-7c4283627bed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dlbank\",\n    \"contact_email\": \"contato@delbank.com\",\n    \"location\": \"São Paulo, Brasil\",\n    \"year_founded\": 2010,\n    \"institution_type\": \"private\",\n    \"focus\": \"Supply Chain Management\",\n    \"website\": \"https://www.fiduciascm.com\",\n    \"regulation\": \"Regulated by ANVISA\",\n    \"key\": \"delbank\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/provider"
+					},
+					"response": []
+				},
+				{
+					"name": "2 - Update Provider",
+					"id": "b90705de-5328-4686-816c-873347d2fb5e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"FiduciaSCM alterado\",\n    \"contact_email\": \"contato@fiduciascm.com\",\n    \"location\": \"São Paulo, Brasil\",\n    \"year_founded\": 2010,\n    \"institution_type\": \"private\",\n    \"focus\": \"Supply Chain Management\",\n    \"website\": \"https://www.fiduciascm.com\",\n    \"regulation\": \"Regulated by ANVISA\",\n    \"key\": \"fiducia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/provider/2"
+					},
+					"response": []
+				},
+				{
+					"name": "2 - List All Providers",
+					"id": "39ba689c-04bd-4a02-8600-e07a58ed530d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/provider",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"provider"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2 - Delete Provider",
+					"id": "b534e711-d7bd-43a3-88a4-f5f4e40cc82f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/provider/1"
+					},
+					"response": []
+				},
+				{
+					"name": "2 - Restore Provider",
+					"id": "37acf12e-f15f-47b8-8d64-23439913d577",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"FiduciaSCM\",\n    \"contact_email\": \"contato@fiduciascm.com\",\n    \"location\": \"São Paulo, Brasil\",\n    \"year_founded\": 2010,\n    \"institution_type\": \"private\",\n    \"focus\": \"Supply Chain Management\",\n    \"website\": \"https://www.fiduciascm.com\",\n    \"regulation\": \"Regulated by ANVISA\",\n    \"key\": \"fiducia\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/provider/restore?key=fiducia",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"provider",
+								"restore"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "fiducia"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2 List Only Provider",
+					"id": "3468be9c-c467-416f-8567-044ad1dfad9a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/provider/2"
+					},
+					"response": []
+				},
+				{
+					"name": "3 List Product",
+					"id": "0fe279c2-8fc8-4fe6-83f7-1ecebce03f1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/provider/2/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"provider",
+								"2",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 Filter Product",
+					"id": "85a4f175-0c9f-4180-b181-b5e2a4cf9de9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/provider/2/products?filter[description]=emprestimo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"provider",
+								"2",
+								"products"
+							],
+							"query": [
+								{
+									"key": "filter[description]",
+									"value": "emprestimo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 Show Only Product",
+					"id": "c620da38-d811-4d45-bd8b-25e7ec8851fb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/provider/2/products/1"
+					},
+					"response": []
+				},
+				{
+					"name": "3 Create Product",
+					"id": "92a602df-bb74-4aa9-aedd-0c66e5352f6b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_name\": \"LOAN\",\n    \"description\" : \"emprestimo\",\n    \"tariff_id\": 18\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/provider/2/products"
+					},
+					"response": []
+				},
+				{
+					"name": "3 Update Product",
+					"id": "c6b20330-0fce-41d2-b0e8-456065bffcb3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"description\" : \"atualizado\",\n    \"tariff_id\": 17\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/provider/1/products/3"
+					},
+					"response": []
+				},
+				{
+					"name": "3 Delete Product",
+					"id": "fcc61ad0-8166-4524-a82d-36828a3cf80d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/provider/1/products/2"
+					},
+					"response": []
+				},
+				{
+					"name": "4 Create Contract Product",
+					"id": "fb78e6cd-404e-4e7f-9ec9-72c6b60bca75",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"contrato\",\n    \"document\": \"18603965006\",\n    \"terms_id\": 1,\n    \"providers_products_id\": 3,\n    \"type\": \"PF\",\n    \"start_date\": \"2024-10-06\",\n    \"end_date\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/product/contract"
+					},
+					"response": []
+				},
+				{
+					"name": "4 Get All Contracts Product",
+					"id": "7eb99d12-0cb1-4cde-a97c-b6a6d75d37b4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/product/contract"
+					},
+					"response": []
+				},
+				{
+					"name": "4 Get Only Contracts Product",
+					"id": "3a1a20ba-cab6-4b7c-9811-deb26180b873",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/product/contract/4"
+					},
+					"response": []
+				},
+				{
+					"name": "4 Get Only Contracts By User",
+					"id": "7210362a-4b24-4dd2-b971-57ea1f761025",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/product/contract?filter[document]=18603965006&filter[name]=contrato",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"contract"
+							],
+							"query": [
+								{
+									"key": "filter[document]",
+									"value": "18603965006"
+								},
+								{
+									"key": "filter[name]",
+									"value": "contrato"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4 Update Contract Product",
+					"id": "2bb55c72-b309-4d51-a69f-b9b68adf0d40",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"18603965006\",\n    \"terms_id\": 2,\n    \"provider_id\": 1,\n    \"providers_products_id\":1,\n    \"type\": \"PF\",\n    \"start_date\": \"2024-10-05\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/product/contract/2"
+					},
+					"response": []
+				},
+				{
+					"name": "4 Delete Contract Product",
+					"id": "4464a0a1-20c3-4c64-a084-9fc9e219039c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/product/contract/1"
+					},
+					"response": []
+				}
+			],
+			"id": "bf02d6d8-d9d2-4fb4-af67-279c86603a60"
+		},
+		{
+			"name": "Tariff",
+			"item": [
+				{
+					"name": "Get Tariffs",
+					"id": "996180be-ae14-4276-bf17-c227ef5494b2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/tariffs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Only Tariffs",
+					"id": "93297b96-196d-4b72-9269-a336c9d60358",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/tariffs/18"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tariff",
+					"id": "9c153ed2-8cef-4063-b267-2587ea83fa08",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Crédito consignado\",\n    \"periodicity\": \"event\",\n    \"type\": \"unit\",\n    \"created_at\": \"2024-02-14T16:49:10.000000Z\",\n    \"updated_at\": \"2024-04-03T17:54:14.000000Z\",\n    \"value\": 1,\n    \"free_use\": 0,\n    \"event_type\": \"CHARGE_PAID\",\n    \"account_type\": \"LEGAL\",\n    \"cost\": 5,\n    \"cost_type\": \"unit\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/tariffs/17"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tariff",
+					"id": "dd12cb20-cfb9-42d9-b951-f2cf89f43d4d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Crédito consignado\",\n    \"periodicity\": \"event\",\n    \"type\": \"unit\",\n    \"value\": 1,\n    \"free_use\": 0,\n    \"event_type\": \"CHARGE_PAID\",\n    \"account_type\": \"LEGAL\",\n    \"cost\": null,\n    \"cost_type\": \"unit\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/tariffs"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tariff",
+					"id": "bf70140e-0a40-4375-a6f5-18ca0d662bad",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/tariffs/16"
+					},
+					"response": []
+				}
+			],
+			"id": "99cb8ef0-2e29-4260-906a-0071ec226fb4"
+		},
+		{
+			"name": "File",
+			"id": "dec53744-2059-4ccc-945c-2eb929cccf01",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"documentBack\": \"https://api.chatbot.astonbank.plastikastudio.com.br/chat-bot/download/613e5e3e-cba7-49e6-98bb-206c437ac3d1\",\r\n    \"documentType\": \"cnh\",\r\n    \"documentFront\": \"https://api.chatbot.astonbank.plastikastudio.com.br/chat-bot/download/7a4be9fb-2e21-4cd2-b442-187d0a0ae103\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/file"
+			},
+			"response": [
+				{
+					"id": "8d41b355-aaa1-4836-ac75-0b7efc0eb33c",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentBack\": \"https://api.chatbot.astonbank.plastikastudio.com.br/chat-bot/download/613e5e3e-cba7-49e6-98bb-206c437ac3d1\",\r\n    \"documentType\": \"cnh\",\r\n    \"documentFront\": \"https://api.chatbot.astonbank.plastikastudio.com.br/chat-bot/download/7a4be9fb-2e21-4cd2-b442-187d0a0ae103\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/file"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/png"
+						},
+						{
+							"key": "Content-Disposition",
+							"value": "inline; filename=\"file.png\""
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 05 Mar 2024 17:00:49 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Upload",
+			"id": "efbd7dc2-12f3-4944-abd9-ece46da5f343",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"documentBack\": \"https://api.chatbot.astonbank.plastikastudio.com.br/chat-bot/download/613e5e3e-cba7-49e6-98bb-206c437ac3d1\",\r\n    \"documentType\": \"cnh\",\r\n    \"documentFront\": \"https://api.chatbot.astonbank.plastikastudio.com.br/chat-bot/download/7a4be9fb-2e21-4cd2-b442-187d0a0ae103\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/file"
+			},
+			"response": [
+				{
+					"id": "2cbd3246-44ef-4d21-8a16-c0b0afc8e1ae",
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentBack\": \"https://api.chatbot.astonbank.plastikastudio.com.br/chat-bot/download/613e5e3e-cba7-49e6-98bb-206c437ac3d1\",\r\n    \"documentType\": \"cnh\",\r\n    \"documentFront\": \"https://api.chatbot.astonbank.plastikastudio.com.br/chat-bot/download/7a4be9fb-2e21-4cd2-b442-187d0a0ae103\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/file"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "raw",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.13"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/png"
+						},
+						{
+							"key": "Content-Disposition",
+							"value": "inline; filename=\"file.png\""
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 05 Mar 2024 17:00:49 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Get Info User",
+			"id": "af658281-8af0-4204-9bf9-36263741dc44",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{base_url}}/account/status/57451389553"
+			},
+			"response": []
+		},
+		{
+			"name": "Test mTLS",
+			"id": "e1a3f520-67c4-4564-aa67-2a56d1a2367d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/test-mlts"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{access_token}}"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3d2d3926-7a6e-4170-b71c-a5d2654e339b",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.headers.add({key: 'X-Global-Key', value: 'FVA3ebDI6I78y0lVNeqZzmkpY8MgweWbo5kWXZ3NhTPzsMPpLfyQ7t0NDd2No19/ShGEb/jW8Y0IYB0Z2CC0Ylz1KsmMtj9WEyTcfwzOdb4K568G5RbK8Po6cWFApede7eNrbRldb/i3FDlG+CYYzKlLJ9Bqw53zyNho9g+MB+OPp5clqFaz7s6FDi142S9PMVLhswqaz1YvsLLAztTI1aoiiV18w31VpxEveI9J0HmubM9y1WMlw3rLGqkv0i/lPocMYVDHnzricD8G7hqTjFwY+BHCeVsa2IoR7h6NDLFMVuVCt9FBujz7ckGpSAg1U3tlGMtYJ9jyq86bneOLNccg5uXUnMKEdyLqlDw86JFuV5S2lVLx3hA8DNeFVP4OY7uzh4pia5PePYxfcz1at5A609A8JMAf18VouauCPPv0dm83yf6Ez2zyVUs60+vjgMTN4wMI0/9csxj767l4xkUb1EsEz4ASkyg9IK06DZ/bi0iM52W+r+1dUa/v5mheV6FBi007JJR2f0TGsHUAY8lWy8Knbu1m1rnlenbZHEIA6sR2ysbgN8BRe0K/WYpQ0rBY8QPVK2BrrRF0TmTrRfcOuQ3gQQRXUXi+ZCux44K5A8jAwGzucD5FlvpQCwLaj1O4PWRlwut7Hk4tjbq+IQNhEQoKJmAax5s8JwS6OaY=' })\r",
+					"pm.request.headers.add({key: 'Accept', value: 'application/json' })"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c4c47c9b-bf9a-4cfe-9089-98a2c1b23262",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost/api",
+			"type": "default"
+		},
+		{
+			"key": "X-Global-Key",
+			"value": "FVA3ebDI6I78y0lVNeqZzmkpY8MgweWbo5kWXZ3NhTPzsMPpLfyQ7t0NDd2No19/ShGEb/jW8Y0IYB0Z2CC0Ylz1KsmMtj9WEyTcfwzOdb4K568G5RbK8Po6cWFApede7eNrbRldb/i3FDlG+CYYzKlLJ9Bqw53zyNho9g+MB+OPp5clqFaz7s6FDi142S9PMVLhswqaz1YvsLLAztTI1aoiiV18w31VpxEveI9J0HmubM9y1WMlw3rLGqkv0i/lPocMYVDHnzricD8G7hqTjFwY+BHCeVsa2IoR7h6NDLFMVuVCt9FBujz7ckGpSAg1U3tlGMtYJ9jyq86bneOLNccg5uXUnMKEdyLqlDw86JFuV5S2lVLx3hA8DNeFVP4OY7uzh4pia5PePYxfcz1at5A609A8JMAf18VouauCPPv0dm83yf6Ez2zyVUs60+vjgMTN4wMI0/9csxj767l4xkUb1EsEz4ASkyg9IK06DZ/bi0iM52W+r+1dUa/v5mheV6FBi007JJR2f0TGsHUAY8lWy8Knbu1m1rnlenbZHEIA6sR2ysbgN8BRe0K/WYpQ0rBY8QPVK2BrrRF0TmTrRfcOuQ3gQQRXUXi+ZCux44K5A8jAwGzucD5FlvpQCwLaj1O4PWRlwut7Hk4tjbq+IQNhEQoKJmAax5s8JwS6OaY=",
+			"type": "string"
+		},
+		{
+			"key": "access_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "expires_in",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refresh_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token_type",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
