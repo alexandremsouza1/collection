@@ -3984,7 +3984,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"contrato\",\n    \"document\": \"18603965006\",\n    \"terms_id\": 1,\n    \"providers_products_id\": 3,\n    \"type\": \"PF\",\n    \"start_date\": \"2024-10-06\",\n    \"end_date\": null\n}",
+							"raw": "{\n    \"name\": \"contrato\",\n    \"document\": \"18603965006\",\n    \"terms_id\": 1,\n    \"providers_products_id\": 6,\n    \"type\": \"PF\",\n    \"start_date\": \"2024-10-06\",\n    \"end_date\": null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
