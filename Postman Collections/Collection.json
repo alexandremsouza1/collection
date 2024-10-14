@@ -4243,6 +4243,28 @@
 					"response": []
 				},
 				{
+					"name": "Update Corban",
+					"id": "3a1e79cd-dee9-4ff9-9e71-faa39aae77fd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"09852465619\",\n    \"name\": \"Alexandre\",\n    \"type\": \"PF\",\n    \"phone\": {\n        \"ddd\": \"11\",\n        \"type\": \"COMERCIAL\",\n        \"number\": \"912345678\"\n    },\n    \"address\": {\n        \"publicPlace\": \"Rua 1\",\n        \"number\": \"100\",\n        \"zipCode\": \"01000-000\",\n        \"neighborhood\": \"Centro\",\n        \"isConfirmed\": true,\n        \"type\": \"COMMERCIAL\",\n        \"cityId\": \"100\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/corban/1"
+					},
+					"response": []
+				},
+				{
 					"name": "Get Only Corban",
 					"id": "7cdeb7ae-d995-4252-8bde-145293aebc94",
 					"protocolProfileBehavior": {
