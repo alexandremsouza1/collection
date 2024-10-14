@@ -4241,6 +4241,19 @@
 						"url": "{{base_url}}/corban"
 					},
 					"response": []
+				},
+				{
+					"name": "Get Only Corban",
+					"id": "7cdeb7ae-d995-4252-8bde-145293aebc94",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/corban/1"
+					},
+					"response": []
 				}
 			],
 			"id": "0bd1dd3d-0ea5-4a77-b177-57bd9f4199d5"
