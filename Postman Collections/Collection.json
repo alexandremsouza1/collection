@@ -4231,7 +4231,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \n}",
+							"raw": "{\n    \"document\": \"09852465619\",\n    \"name\": \"Alexandre\",\n    \"type\": \"PF\",\n    \"phone\": {\n        \"ddd\": \"11\",\n        \"type\": \"COMERCIAL\",\n        \"number\": \"912345678\"\n    },\n    \"address\": {\n        \"publicPlace\": \"Rua 1\",\n        \"number\": \"100\",\n        \"zipCode\": \"01000-000\",\n        \"neighborhood\": \"Centro\",\n        \"isConfirmed\": true,\n        \"type\": \"COMMERCIAL\",\n        \"cityId\": \"100\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
