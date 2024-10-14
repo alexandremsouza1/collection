@@ -4253,7 +4253,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"document\": \"09852465619\",\n    \"name\": \"Alexandre\",\n    \"type\": \"PF\",\n    \"phone\": {\n        \"ddd\": \"11\",\n        \"type\": \"COMERCIAL\",\n        \"number\": \"912345678\"\n    },\n    \"address\": {\n        \"publicPlace\": \"Rua 1\",\n        \"number\": \"100\",\n        \"zipCode\": \"01000-000\",\n        \"neighborhood\": \"Centro\",\n        \"isConfirmed\": true,\n        \"type\": \"COMMERCIAL\",\n        \"cityId\": \"100\"\n    }\n}",
+							"raw": "{\n    \"document\": \"09852465618\",\n    \"name\": \"Alexandre\",\n    \"type\": \"PF\",\n    \"phone\": {\n        \"ddd\": \"12\",\n        \"type\": \"COMERCIAL\",\n        \"number\": \"912345678\"\n    },\n    \"address\": {\n        \"publicPlace\": \"Rua 2\",\n        \"number\": \"100\",\n        \"zipCode\": \"01000-000\",\n        \"neighborhood\": \"Centro\",\n        \"isConfirmed\": true,\n        \"type\": \"COMMERCIAL\",\n        \"cityId\": \"100\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4272,6 +4272,19 @@
 					},
 					"request": {
 						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/corban/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Corban",
+					"id": "00d6c7cf-fc6f-4265-8d62-33c41aab6780",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
 						"header": [],
 						"url": "{{base_url}}/corban/1"
 					},
