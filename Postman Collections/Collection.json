@@ -3918,14 +3918,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"product_name\": \"LOAN\",\n    \"description\" : \"emprestimo\",\n    \"tariff_id\": 18\n}",
+							"raw": "{\n    \"product_name\": \"ACCOUNT\",\n    \"description\" : \"emprestimo\",\n    \"tariff_id\": 18\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base_url}}/provider/2/products"
+						"url": "{{base_url}}/provider/1/products"
 					},
 					"response": []
 				},
@@ -3984,7 +3984,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"contrato\",\n    \"document\": \"08395049000101\",\n    \"terms_id\": 1,\n    \"providers_products_id\": 6,\n    \"type\": \"PJ\",\n    \"start_date\": \"2024-10-06\",\n    \"end_date\": null\n}",
+							"raw": "{\n    \"name\": \"contrato\",\n    \"document\": \"18603965006\",\n    \"terms_id\": 1,\n    \"providers_products_id\": 6,\n    \"type\": \"PF\",\n    \"start_date\": \"2024-10-06\",\n    \"end_date\": null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4216,6 +4216,34 @@
 				}
 			],
 			"id": "99cb8ef0-2e29-4260-906a-0071ec226fb4"
+		},
+		{
+			"name": "Corban",
+			"item": [
+				{
+					"name": "Create Corban",
+					"id": "3be8ad71-1458-471b-b13d-4610ea4f4d1e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/corban"
+					},
+					"response": []
+				}
+			],
+			"id": "0bd1dd3d-0ea5-4a77-b177-57bd9f4199d5"
 		},
 		{
 			"name": "File",
