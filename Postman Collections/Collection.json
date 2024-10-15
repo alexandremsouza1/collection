@@ -4395,6 +4395,45 @@
 						"url": "{{base_url}}/corban/2/products/1"
 					},
 					"response": []
+				},
+				{
+					"name": "Get All Corban Products",
+					"id": "e6d8d0c9-46df-4419-ab51-a8af4dd62572",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/corban/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"corban",
+								"products"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "0bd1dd3d-0ea5-4a77-b177-57bd9f4199d5"
