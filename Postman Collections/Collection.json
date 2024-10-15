@@ -4415,7 +4415,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/corban",
+							"raw": "{{base_url}}/corban?filter[name]=jalex",
 							"host": [
 								"{{base_url}}"
 							],
@@ -4428,6 +4428,11 @@
 									"value": "1",
 									"type": "text",
 									"disabled": true
+								},
+								{
+									"key": "filter[name]",
+									"value": "jalex",
+									"type": "text"
 								}
 							]
 						}
@@ -4451,7 +4456,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"corban_id\": 2,\n    \"contracts_id\": 1\n}",
+							"raw": "{\n    \"corban_id\": 2,\n    \"contracts_id\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
