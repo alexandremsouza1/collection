@@ -4449,7 +4449,16 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": "{{base_url}}/analyst"
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corban_id\": 1,\n    \"contracts_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/analyst/sign-auth/1"
 					},
 					"response": []
 				}
