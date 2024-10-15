@@ -4333,6 +4333,28 @@
 						"url": "{{base_url}}/corban/2/products/1"
 					},
 					"response": []
+				},
+				{
+					"name": "Delete Corban Product",
+					"id": "4b2385d1-a7ab-4394-8a95-6baa07142ef3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/corban/2/products/1"
+					},
+					"response": []
 				}
 			],
 			"id": "0bd1dd3d-0ea5-4a77-b177-57bd9f4199d5"
