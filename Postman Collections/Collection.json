@@ -4301,7 +4301,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"product_id\":5\n}",
+							"raw": "{\n    \"product_id\":4\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4313,7 +4313,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Corban Product",
+					"name": "Get Only Corban Product",
 					"id": "edbf1158-3af6-44f6-a3b6-6044a3bb7cfd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4331,6 +4331,46 @@
 							}
 						},
 						"url": "{{base_url}}/corban/2/products/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Corban Products",
+					"id": "2878952a-201a-42c9-84c4-91d245745839",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/corban/2/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"corban",
+								"2",
+								"products"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
 					},
 					"response": []
 				},
