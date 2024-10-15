@@ -4415,7 +4415,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/corban?filter[name]=jalex",
+							"raw": "{{base_url}}/corban",
 							"host": [
 								"{{base_url}}"
 							],
@@ -4432,7 +4432,7 @@
 								{
 									"key": "filter[name]",
 									"value": "jalex",
-									"type": "text"
+									"disabled": true
 								}
 							]
 						}
