@@ -4301,14 +4301,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \n}",
+							"raw": "{\n    \"product_id\":6\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{base_url}}/corban/products"
+						"url": "{{base_url}}/corban/2/products"
 					},
 					"response": []
 				}
