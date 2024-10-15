@@ -4451,7 +4451,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"corban_id\": 1,\n    \"contracts_id\": 1\n}",
+							"raw": "{\n    \"corban_id\": 2,\n    \"contracts_id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
