@@ -4330,7 +4330,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/corban/2/products/1"
+						"url": "{{base_url}}/corban/2/products"
 					},
 					"response": []
 				},
@@ -4415,13 +4415,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/corban/1",
+							"raw": "{{base_url}}/corban",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
-								"corban",
-								"1"
+								"corban"
 							],
 							"query": [
 								{
