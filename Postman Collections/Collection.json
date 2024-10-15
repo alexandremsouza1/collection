@@ -4301,7 +4301,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"product_id\":6\n}",
+							"raw": "{\n    \"product_id\":5\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4309,6 +4309,28 @@
 							}
 						},
 						"url": "{{base_url}}/corban/2/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Corban Product",
+					"id": "edbf1158-3af6-44f6-a3b6-6044a3bb7cfd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/corban/2/products/1"
 					},
 					"response": []
 				}
