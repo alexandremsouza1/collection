@@ -4415,13 +4415,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_url}}/corban/products",
+							"raw": "{{base_url}}/corban/1",
 							"host": [
 								"{{base_url}}"
 							],
 							"path": [
 								"corban",
-								"products"
+								"1"
 							],
 							"query": [
 								{
