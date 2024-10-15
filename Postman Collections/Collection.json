@@ -4273,7 +4273,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{base_url}}/corban/1"
+						"url": "{{base_url}}/corban/2"
 					},
 					"response": []
 				},
@@ -4287,6 +4287,19 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{base_url}}/corban/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Corban Product",
+					"id": "addc08f3-5bf4-448a-81a2-136867a1f713",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{base_url}}/corban/products"
 					},
 					"response": []
 				}
