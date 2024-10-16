@@ -4443,34 +4443,6 @@
 			"id": "0bd1dd3d-0ea5-4a77-b177-57bd9f4199d5"
 		},
 		{
-			"name": "Analysts",
-			"item": [
-				{
-					"name": "Sign power of attorney",
-					"id": "19a480a2-5ae0-486b-8668-1b8bb4d8abe8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"corban_id\": 2,\n    \"contracts_id\": 2\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/analyst/sign-auth/1"
-					},
-					"response": []
-				}
-			],
-			"id": "bb33b7f3-7b16-47f1-a995-13455eb4e3bc"
-		},
-		{
 			"name": "File",
 			"id": "dec53744-2059-4ccc-945c-2eb929cccf01",
 			"protocolProfileBehavior": {
