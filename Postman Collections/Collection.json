@@ -4231,7 +4231,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_id\": 47\n}",
+							"raw": "{\n    \"user_id\": 46\n}",
 							"options": {
 								"raw": {
 									"language": "json"
