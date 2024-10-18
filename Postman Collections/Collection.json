@@ -4286,7 +4286,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{base_url}}/corban/10"
+						"url": "{{base_url}}/corban/24"
 					},
 					"response": []
 				},
