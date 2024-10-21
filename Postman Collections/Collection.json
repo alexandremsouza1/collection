@@ -4069,6 +4069,123 @@
 			"name": "Corban",
 			"item": [
 				{
+					"name": "Products Able",
+					"item": [
+						{
+							"name": "Create Corban Product",
+							"id": "addc08f3-5bf4-448a-81a2-136867a1f713",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\":4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/corban/2/products"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Only Corban Product",
+							"id": "edbf1158-3af6-44f6-a3b6-6044a3bb7cfd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/corban/2/products"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Corban Products",
+							"id": "2878952a-201a-42c9-84c4-91d245745839",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/corban/2/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"corban",
+										"2",
+										"products"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Corban Product",
+							"id": "4b2385d1-a7ab-4394-8a95-6baa07142ef3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/corban/2/products/1"
+							},
+							"response": []
+						}
+					],
+					"id": "8210bab2-84ce-4f65-aeff-45a79507b6fc"
+				},
+				{
+					"name": "Corban Person",
+					"item": [],
+					"id": "9637dfd9-5aa9-473d-a472-0826bd8cb05e"
+				},
+				{
 					"name": "Create Corban",
 					"id": "3be8ad71-1458-471b-b13d-4610ea4f4d1e",
 					"protocolProfileBehavior": {
@@ -4135,112 +4252,6 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{base_url}}/corban/24"
-					},
-					"response": []
-				},
-				{
-					"name": "Create Corban Product",
-					"id": "addc08f3-5bf4-448a-81a2-136867a1f713",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"product_id\":4\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/corban/2/products"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Only Corban Product",
-					"id": "edbf1158-3af6-44f6-a3b6-6044a3bb7cfd",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/corban/2/products"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Corban Products",
-					"id": "2878952a-201a-42c9-84c4-91d245745839",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base_url}}/corban/2/products",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"corban",
-								"2",
-								"products"
-							],
-							"query": [
-								{
-									"key": "pageSize",
-									"value": "1",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Corban Product",
-					"id": "4b2385d1-a7ab-4394-8a95-6baa07142ef3",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{base_url}}/corban/2/products/1"
 					},
 					"response": []
 				},
