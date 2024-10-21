@@ -4249,7 +4249,7 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": "{{base_url}}/corban/24"
+								"url": "{{base_url}}/corban/26"
 							},
 							"response": []
 						},
@@ -4287,8 +4287,8 @@
 											"disabled": true
 										},
 										{
-											"key": "filter[name]",
-											"value": "jalex",
+											"key": "filter[ownerable][email]",
+											"value": "gustavo",
 											"disabled": true
 										}
 									]
