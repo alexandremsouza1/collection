@@ -4313,7 +4313,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"product_id\": \"47\",\n    \"contract_id\": \"1\",\n    \"document\": \"91495959031\",\n    \"type\": \"PF\"\n}",
+									"raw": "{\n    \"product_id\": \"47\",\n    \"contract_id\": \"1\",\n    \"document\": \"10474090035\",\n    \"type\": \"PF\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
