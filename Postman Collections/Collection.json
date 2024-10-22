@@ -4313,13 +4313,26 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"product_id\": \"47\",\n    \"contract_id\": \"1\",\n    \"document\": \"10474090035\"\n}",
+									"raw": "{\n    \"product_id\": 48,\n    \"contract_id\": 1,\n    \"document\": \"10474090035\",\n    \"date\": \"22-10-2024\",\n    \"status\":\"APPROVED\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
+								"url": "{{base_url}}/sales"
+							},
+							"response": []
+						},
+						{
+							"name": "Sales Copy",
+							"id": "41940036-51b4-47f6-a873-0ba7658e2f6f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
 								"url": "{{base_url}}/sales"
 							},
 							"response": []
