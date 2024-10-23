@@ -3618,7 +3618,7 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [
 							{
 								"key": "Accept",
@@ -3635,7 +3635,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/simulate-loans"
+						"url": "{{base_url}}/simulate-loans/639784e4-0de3-4f37-8f78-0a68f9628dac"
 					},
 					"response": []
 				}
