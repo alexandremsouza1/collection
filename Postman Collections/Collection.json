@@ -4344,6 +4344,40 @@
 			"id": "0bd1dd3d-0ea5-4a77-b177-57bd9f4199d5"
 		},
 		{
+			"name": "Fiduciary Agent",
+			"item": [
+				{
+					"name": "History",
+					"item": [
+						{
+							"name": "Create History",
+							"id": "0d4f4e33-837a-4223-92f6-3af9f0fc4734",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{base_url}}/fiduciary/history"
+							},
+							"response": []
+						}
+					],
+					"id": "40609405-950b-4d06-a3fe-af3ca639207f"
+				}
+			],
+			"id": "cee26477-1dbd-4245-8608-bcc08fbec1e3"
+		},
+		{
 			"name": "File",
 			"id": "dec53744-2059-4ccc-945c-2eb929cccf01",
 			"protocolProfileBehavior": {
