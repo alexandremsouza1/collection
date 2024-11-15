@@ -4824,6 +4824,102 @@
 				"description": "Generated from cURL: curl 'http://localhost/nova-vendor/pipeline-user-block/pipeline/57' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'X-Requested-With: XMLHttpRequest' -H 'X-CSRF-TOKEN: 9UZokiok4jEnan8RxzQZUEEfOokd0AAxlFCZUAi3' -H 'X-XSRF-TOKEN: eyJpdiI6InRnak1IMTY5aDg5MkZqK0ZIK1N0d0E9PSIsInZhbHVlIjoiUWZYUEsvaHlQSmNRaWNLY3REaEFpd0lKU3dnMHZBc0d6VlIxL3pBb0U4T2dPK1lreUNpaVhWalpOaWRkTThJUmZwL1B5Y2NyNWlNeDdFNkdleDRNci9ITFoxakdIN1FlUC9OVmhWUzJQekZjb0JYTG50bFVIOGJ4OHV5WHEzOEIiLCJtYWMiOiIxOWRmZmJmYWVhOGViNTNkODUyNGUzMTU4ZDkxZWVkNTQ5NWY1NWJjZmMyN2M5NTIwOTRlZjM3ZDYzOGM0ODAwIiwidGFnIjoiIn0=' -H 'Connection: keep-alive' -H 'Referer: http://localhost/nova/resources/pipelines/57' -H 'Cookie: tk_ai=lJ4FPGS5jII7S5Ekh6eQrwAH; wp-settings-time-1=1730859918; XDEBUG_SESSION=VSCODE; XSRF-TOKEN=eyJpdiI6InRnak1IMTY5aDg5MkZqK0ZIK1N0d0E9PSIsInZhbHVlIjoiUWZYUEsvaHlQSmNRaWNLY3REaEFpd0lKU3dnMHZBc0d6VlIxL3pBb0U4T2dPK1lreUNpaVhWalpOaWRkTThJUmZwL1B5Y2NyNWlNeDdFNkdleDRNci9ITFoxakdIN1FlUC9OVmhWUzJQekZjb0JYTG50bFVIOGJ4OHV5WHEzOEIiLCJtYWMiOiIxOWRmZmJmYWVhOGViNTNkODUyNGUzMTU4ZDkxZWVkNTQ5NWY1NWJjZmMyN2M5NTIwOTRlZjM3ZDYzOGM0ODAwIiwidGFnIjoiIn0%3D; aston_bank_session=eyJpdiI6Im9vRk1zU0xIMkozSGp1dWNXcFdMeGc9PSIsInZhbHVlIjoiaE90Snp5OHcxbm11UGpMRko5Skc1cmtyeWtqM09XTDBPRFJDeUZEU0s4NWxwTFpFeE15ZzlkaEdJSFBUOEVURFk2dGFNbFFQN0U4cEQvSVE1S3MrMXk3bUZqcysvcmpCa2lzNnFYbVNXK1paUUp5MEFSelNMZFdlMlBhQnFja0kiLCJtYWMiOiIwMTU4MGUzODNkNzgxODU0MzdhNGM3ODZmNWE4MTQyM2VlNmZhMzVmOWIyOTFkMzY0YWY2ZDcyZmU2YjJlYzMxIiwidGFnIjoiIn0%3D' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin'"
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost/nova-vendor/pipeline-user-block/update-provider",
+			"id": "e92c7449-5ce1-47ad-be68-9ccebaf2c2c0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.5"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br, zstd"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "O1kaVndMLS1ayxUuKmFnxQc3HOggxXTJjS95rVd6"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6IkFTVGdrZVg5RGpmd0V3a0JtY2M5Y3c9PSIsInZhbHVlIjoiOFBDY3lYOXBSMisxaEFZbG4zaDdDTVNJejdLcExPLytjZVB6ZktOcy9iaWlDcVZ0QlpvSEVueWJ6c0RJTkRrOWgyZVJiaFdHTVFQTW4zV2ZyTlVmampDUW81K2Z1MWRBTFErOFFka0xLZmxEa1V4NTQ0amlRdHBNQTBNbmtNNUkiLCJtYWMiOiJjMjdkYWRkZjJhOTAzM2M4NGQxZjA5MGIwODNmN2M0Mjk4MmYwZGRlOTk4MDcwOGE3MGQwMTk1NmMwNWI2MmUyIiwidGFnIjoiIn0="
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost"
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					},
+					{
+						"key": "Sec-GPC",
+						"value": "1"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost/nova/resources/pipelines/55"
+					},
+					{
+						"key": "Cookie",
+						"value": "XDEBUG_SESSION=VSCODE; XSRF-TOKEN=eyJpdiI6IkFTVGdrZVg5RGpmd0V3a0JtY2M5Y3c9PSIsInZhbHVlIjoiOFBDY3lYOXBSMisxaEFZbG4zaDdDTVNJejdLcExPLytjZVB6ZktOcy9iaWlDcVZ0QlpvSEVueWJ6c0RJTkRrOWgyZVJiaFdHTVFQTW4zV2ZyTlVmampDUW81K2Z1MWRBTFErOFFka0xLZmxEa1V4NTQ0amlRdHBNQTBNbmtNNUkiLCJtYWMiOiJjMjdkYWRkZjJhOTAzM2M4NGQxZjA5MGIwODNmN2M0Mjk4MmYwZGRlOTk4MDcwOGE3MGQwMTk1NmMwNWI2MmUyIiwidGFnIjoiIn0%3D; aston_bank_session=eyJpdiI6ImFmdFdEd1NVSGovNGM2cS9rRTUwaWc9PSIsInZhbHVlIjoiMTlXN24zdjErTCs3NzkrbUx2ZGtOSi9seWd6cTdZTHRGZDdvRDhlQzBrZGFkdGVlbXRjQzRicUZXQWYzTUY1UHY3UHRkeWpFT0VQUGZ4NnVtL24yZ0xjSVBtRnN2dVdCeFRIcHVHek44NUVHcm10SzA5bnY0OXpTcVlzSHRhNlQiLCJtYWMiOiI0MjM3MWFmZjFhMDQzNTcxOWEyMzNlYzVmOWExZWI4OWJhMzQ2MjBkNWFkN2NiMjAyZjk0MzgyYTE4MmQ3YTlhIiwidGFnIjoiIn0%3D"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "Priority",
+						"value": "u=0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"provider\":\"Delbank\",\"pipeline_id\":55}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost/nova-vendor/pipeline-user-block/update-provider",
+				"description": "Generated from cURL: curl 'http://localhost/nova-vendor/pipeline-user-block/update-provider' -X POST -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'Content-Type: application/json' -H 'X-Requested-With: XMLHttpRequest' -H 'X-CSRF-TOKEN: O1kaVndMLS1ayxUuKmFnxQc3HOggxXTJjS95rVd6' -H 'X-XSRF-TOKEN: eyJpdiI6IkFTVGdrZVg5RGpmd0V3a0JtY2M5Y3c9PSIsInZhbHVlIjoiOFBDY3lYOXBSMisxaEFZbG4zaDdDTVNJejdLcExPLytjZVB6ZktOcy9iaWlDcVZ0QlpvSEVueWJ6c0RJTkRrOWgyZVJiaFdHTVFQTW4zV2ZyTlVmampDUW81K2Z1MWRBTFErOFFka0xLZmxEa1V4NTQ0amlRdHBNQTBNbmtNNUkiLCJtYWMiOiJjMjdkYWRkZjJhOTAzM2M4NGQxZjA5MGIwODNmN2M0Mjk4MmYwZGRlOTk4MDcwOGE3MGQwMTk1NmMwNWI2MmUyIiwidGFnIjoiIn0=' -H 'Origin: http://localhost' -H 'DNT: 1' -H 'Sec-GPC: 1' -H 'Connection: keep-alive' -H 'Referer: http://localhost/nova/resources/pipelines/55' -H 'Cookie: XDEBUG_SESSION=VSCODE; XSRF-TOKEN=eyJpdiI6IkFTVGdrZVg5RGpmd0V3a0JtY2M5Y3c9PSIsInZhbHVlIjoiOFBDY3lYOXBSMisxaEFZbG4zaDdDTVNJejdLcExPLytjZVB6ZktOcy9iaWlDcVZ0QlpvSEVueWJ6c0RJTkRrOWgyZVJiaFdHTVFQTW4zV2ZyTlVmampDUW81K2Z1MWRBTFErOFFka0xLZmxEa1V4NTQ0amlRdHBNQTBNbmtNNUkiLCJtYWMiOiJjMjdkYWRkZjJhOTAzM2M4NGQxZjA5MGIwODNmN2M0Mjk4MmYwZGRlOTk4MDcwOGE3MGQwMTk1NmMwNWI2MmUyIiwidGFnIjoiIn0%3D; aston_bank_session=eyJpdiI6ImFmdFdEd1NVSGovNGM2cS9rRTUwaWc9PSIsInZhbHVlIjoiMTlXN24zdjErTCs3NzkrbUx2ZGtOSi9seWd6cTdZTHRGZDdvRDhlQzBrZGFkdGVlbXRjQzRicUZXQWYzTUY1UHY3UHRkeWpFT0VQUGZ4NnVtL24yZ0xjSVBtRnN2dVdCeFRIcHVHek44NUVHcm10SzA5bnY0OXpTcVlzSHRhNlQiLCJtYWMiOiI0MjM3MWFmZjFhMDQzNTcxOWEyMzNlYzVmOWExZWI4OWJhMzQ2MjBkNWFkN2NiMjAyZjk0MzgyYTE4MmQ3YTlhIiwidGFnIjoiIn0%3D' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin' -H 'Priority: u=0' --data-raw '{\"provider\":\"Delbank\",\"pipeline_id\":55}'"
+			},
+			"response": []
 		}
 	],
 	"auth": {
