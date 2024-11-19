@@ -4920,6 +4920,81 @@
 				"description": "Generated from cURL: curl 'http://localhost/nova-vendor/pipeline-user-block/update-provider' -X POST -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'Content-Type: application/json' -H 'X-Requested-With: XMLHttpRequest' -H 'X-CSRF-TOKEN: O1kaVndMLS1ayxUuKmFnxQc3HOggxXTJjS95rVd6' -H 'X-XSRF-TOKEN: eyJpdiI6IkFTVGdrZVg5RGpmd0V3a0JtY2M5Y3c9PSIsInZhbHVlIjoiOFBDY3lYOXBSMisxaEFZbG4zaDdDTVNJejdLcExPLytjZVB6ZktOcy9iaWlDcVZ0QlpvSEVueWJ6c0RJTkRrOWgyZVJiaFdHTVFQTW4zV2ZyTlVmampDUW81K2Z1MWRBTFErOFFka0xLZmxEa1V4NTQ0amlRdHBNQTBNbmtNNUkiLCJtYWMiOiJjMjdkYWRkZjJhOTAzM2M4NGQxZjA5MGIwODNmN2M0Mjk4MmYwZGRlOTk4MDcwOGE3MGQwMTk1NmMwNWI2MmUyIiwidGFnIjoiIn0=' -H 'Origin: http://localhost' -H 'DNT: 1' -H 'Sec-GPC: 1' -H 'Connection: keep-alive' -H 'Referer: http://localhost/nova/resources/pipelines/55' -H 'Cookie: XDEBUG_SESSION=VSCODE; XSRF-TOKEN=eyJpdiI6IkFTVGdrZVg5RGpmd0V3a0JtY2M5Y3c9PSIsInZhbHVlIjoiOFBDY3lYOXBSMisxaEFZbG4zaDdDTVNJejdLcExPLytjZVB6ZktOcy9iaWlDcVZ0QlpvSEVueWJ6c0RJTkRrOWgyZVJiaFdHTVFQTW4zV2ZyTlVmampDUW81K2Z1MWRBTFErOFFka0xLZmxEa1V4NTQ0amlRdHBNQTBNbmtNNUkiLCJtYWMiOiJjMjdkYWRkZjJhOTAzM2M4NGQxZjA5MGIwODNmN2M0Mjk4MmYwZGRlOTk4MDcwOGE3MGQwMTk1NmMwNWI2MmUyIiwidGFnIjoiIn0%3D; aston_bank_session=eyJpdiI6ImFmdFdEd1NVSGovNGM2cS9rRTUwaWc9PSIsInZhbHVlIjoiMTlXN24zdjErTCs3NzkrbUx2ZGtOSi9seWd6cTdZTHRGZDdvRDhlQzBrZGFkdGVlbXRjQzRicUZXQWYzTUY1UHY3UHRkeWpFT0VQUGZ4NnVtL24yZ0xjSVBtRnN2dVdCeFRIcHVHek44NUVHcm10SzA5bnY0OXpTcVlzSHRhNlQiLCJtYWMiOiI0MjM3MWFmZjFhMDQzNTcxOWEyMzNlYzVmOWExZWI4OWJhMzQ2MjBkNWFkN2NiMjAyZjk0MzgyYTE4MmQ3YTlhIiwidGFnIjoiIn0%3D' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin' -H 'Priority: u=0' --data-raw '{\"provider\":\"Delbank\",\"pipeline_id\":55}'"
 			},
 			"response": []
+		},
+		{
+			"name": "http://localhost/nova-vendor/pipeline-user-block/pipeline/60",
+			"id": "4e454661-e41d-4ebe-8764-14330edec7e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.5"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br, zstd"
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest"
+					},
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "IH0S2nSTizCPq178VyDMWhGIoYHh9J8OaSnllXJ5"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "eyJpdiI6InRYcUtJM1F2dzMwVjdibGoyU1ZENXc9PSIsInZhbHVlIjoiUG44eUVWNTl0YmVHT1BsbmdvMTIzRWFwQzl1V1FyWmIrOVpOcnlRS244alNyN1p4R2R2U0dyZ3MvWlFzaXorMHpINWI5YjFHL1dDK1hXUXRmcG9FeFdXelRSU3ZYN2MvZ0ZiWGYxeU81NEQxd0NQaG5HODcwL1J6UGtsSzlqc0wiLCJtYWMiOiJlYmVmMGVkODFiN2EyY2RlOGYyMWFjMTgxYmExYzg1MzEwMmQxMTFhM2JmZTBmZDdkMGJlYWJkOTgxMzgzZmFiIiwidGFnIjoiIn0="
+					},
+					{
+						"key": "DNT",
+						"value": "1"
+					},
+					{
+						"key": "Sec-GPC",
+						"value": "1"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost/nova/resources/pipelines/60"
+					},
+					{
+						"key": "Cookie",
+						"value": "XDEBUG_SESSION=VSCODE; XSRF-TOKEN=eyJpdiI6InRYcUtJM1F2dzMwVjdibGoyU1ZENXc9PSIsInZhbHVlIjoiUG44eUVWNTl0YmVHT1BsbmdvMTIzRWFwQzl1V1FyWmIrOVpOcnlRS244alNyN1p4R2R2U0dyZ3MvWlFzaXorMHpINWI5YjFHL1dDK1hXUXRmcG9FeFdXelRSU3ZYN2MvZ0ZiWGYxeU81NEQxd0NQaG5HODcwL1J6UGtsSzlqc0wiLCJtYWMiOiJlYmVmMGVkODFiN2EyY2RlOGYyMWFjMTgxYmExYzg1MzEwMmQxMTFhM2JmZTBmZDdkMGJlYWJkOTgxMzgzZmFiIiwidGFnIjoiIn0%3D; aston_bank_session=eyJpdiI6InhTWjlqZWpUdjg3ZzZuUGpSeCtYR1E9PSIsInZhbHVlIjoiZzYveTZqYlVTOUZsSTlQQk1HSFk3N2FmVS9TeHQvZ0dPR0FBMGNPSzFnK1NXQ2hzTnpUUFRnaDV3WFhwV1RqRTNoOW50Nkw5VkdId2RSNXJtdDNMMStrQmliRVFTdU55TDNtNjdRZGdxNlBJWTMrMEk1NGgrTEJzNGlpTEhNS2MiLCJtYWMiOiI1NTA3NGU4NmM2MmI5MjgwNmJlNTI0YzQ2MjZiODAzYjU1NDUzZTRhZWY3NDAxYWE2ODY5MGEzZDNjNmVkYjA2IiwidGFnIjoiIn0%3D"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					}
+				],
+				"url": "http://localhost/nova-vendor/pipeline-user-block/pipeline/60",
+				"description": "Generated from cURL: curl 'http://localhost/nova-vendor/pipeline-user-block/pipeline/60' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'X-Requested-With: XMLHttpRequest' -H 'X-CSRF-TOKEN: IH0S2nSTizCPq178VyDMWhGIoYHh9J8OaSnllXJ5' -H 'X-XSRF-TOKEN: eyJpdiI6InRYcUtJM1F2dzMwVjdibGoyU1ZENXc9PSIsInZhbHVlIjoiUG44eUVWNTl0YmVHT1BsbmdvMTIzRWFwQzl1V1FyWmIrOVpOcnlRS244alNyN1p4R2R2U0dyZ3MvWlFzaXorMHpINWI5YjFHL1dDK1hXUXRmcG9FeFdXelRSU3ZYN2MvZ0ZiWGYxeU81NEQxd0NQaG5HODcwL1J6UGtsSzlqc0wiLCJtYWMiOiJlYmVmMGVkODFiN2EyY2RlOGYyMWFjMTgxYmExYzg1MzEwMmQxMTFhM2JmZTBmZDdkMGJlYWJkOTgxMzgzZmFiIiwidGFnIjoiIn0=' -H 'DNT: 1' -H 'Sec-GPC: 1' -H 'Connection: keep-alive' -H 'Referer: http://localhost/nova/resources/pipelines/60' -H 'Cookie: XDEBUG_SESSION=VSCODE; XSRF-TOKEN=eyJpdiI6InRYcUtJM1F2dzMwVjdibGoyU1ZENXc9PSIsInZhbHVlIjoiUG44eUVWNTl0YmVHT1BsbmdvMTIzRWFwQzl1V1FyWmIrOVpOcnlRS244alNyN1p4R2R2U0dyZ3MvWlFzaXorMHpINWI5YjFHL1dDK1hXUXRmcG9FeFdXelRSU3ZYN2MvZ0ZiWGYxeU81NEQxd0NQaG5HODcwL1J6UGtsSzlqc0wiLCJtYWMiOiJlYmVmMGVkODFiN2EyY2RlOGYyMWFjMTgxYmExYzg1MzEwMmQxMTFhM2JmZTBmZDdkMGJlYWJkOTgxMzgzZmFiIiwidGFnIjoiIn0%3D; aston_bank_session=eyJpdiI6InhTWjlqZWpUdjg3ZzZuUGpSeCtYR1E9PSIsInZhbHVlIjoiZzYveTZqYlVTOUZsSTlQQk1HSFk3N2FmVS9TeHQvZ0dPR0FBMGNPSzFnK1NXQ2hzTnpUUFRnaDV3WFhwV1RqRTNoOW50Nkw5VkdId2RSNXJtdDNMMStrQmliRVFTdU55TDNtNjdRZGdxNlBJWTMrMEk1NGgrTEJzNGlpTEhNS2MiLCJtYWMiOiI1NTA3NGU4NmM2MmI5MjgwNmJlNTI0YzQ2MjZiODAzYjU1NDUzZTRhZWY3NDAxYWE2ODY5MGEzZDNjNmVkYjA2IiwidGFnIjoiIn0%3D' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin'"
+			},
+			"response": []
 		}
 	],
 	"auth": {
