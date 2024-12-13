@@ -4995,6 +4995,28 @@
 				"description": "Generated from cURL: curl 'http://localhost/nova-vendor/pipeline-user-block/pipeline/60' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:132.0) Gecko/20100101 Firefox/132.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'X-Requested-With: XMLHttpRequest' -H 'X-CSRF-TOKEN: IH0S2nSTizCPq178VyDMWhGIoYHh9J8OaSnllXJ5' -H 'X-XSRF-TOKEN: eyJpdiI6InRYcUtJM1F2dzMwVjdibGoyU1ZENXc9PSIsInZhbHVlIjoiUG44eUVWNTl0YmVHT1BsbmdvMTIzRWFwQzl1V1FyWmIrOVpOcnlRS244alNyN1p4R2R2U0dyZ3MvWlFzaXorMHpINWI5YjFHL1dDK1hXUXRmcG9FeFdXelRSU3ZYN2MvZ0ZiWGYxeU81NEQxd0NQaG5HODcwL1J6UGtsSzlqc0wiLCJtYWMiOiJlYmVmMGVkODFiN2EyY2RlOGYyMWFjMTgxYmExYzg1MzEwMmQxMTFhM2JmZTBmZDdkMGJlYWJkOTgxMzgzZmFiIiwidGFnIjoiIn0=' -H 'DNT: 1' -H 'Sec-GPC: 1' -H 'Connection: keep-alive' -H 'Referer: http://localhost/nova/resources/pipelines/60' -H 'Cookie: XDEBUG_SESSION=VSCODE; XSRF-TOKEN=eyJpdiI6InRYcUtJM1F2dzMwVjdibGoyU1ZENXc9PSIsInZhbHVlIjoiUG44eUVWNTl0YmVHT1BsbmdvMTIzRWFwQzl1V1FyWmIrOVpOcnlRS244alNyN1p4R2R2U0dyZ3MvWlFzaXorMHpINWI5YjFHL1dDK1hXUXRmcG9FeFdXelRSU3ZYN2MvZ0ZiWGYxeU81NEQxd0NQaG5HODcwL1J6UGtsSzlqc0wiLCJtYWMiOiJlYmVmMGVkODFiN2EyY2RlOGYyMWFjMTgxYmExYzg1MzEwMmQxMTFhM2JmZTBmZDdkMGJlYWJkOTgxMzgzZmFiIiwidGFnIjoiIn0%3D; aston_bank_session=eyJpdiI6InhTWjlqZWpUdjg3ZzZuUGpSeCtYR1E9PSIsInZhbHVlIjoiZzYveTZqYlVTOUZsSTlQQk1HSFk3N2FmVS9TeHQvZ0dPR0FBMGNPSzFnK1NXQ2hzTnpUUFRnaDV3WFhwV1RqRTNoOW50Nkw5VkdId2RSNXJtdDNMMStrQmliRVFTdU55TDNtNjdRZGdxNlBJWTMrMEk1NGgrTEJzNGlpTEhNS2MiLCJtYWMiOiI1NTA3NGU4NmM2MmI5MjgwNmJlNTI0YzQ2MjZiODAzYjU1NDUzZTRhZWY3NDAxYWE2ODY5MGEzZDNjNmVkYjA2IiwidGFnIjoiIn0%3D' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin'"
 			},
 			"response": []
+		},
+		{
+			"name": "Zapsign",
+			"id": "80d192ce-917d-44bd-bcfc-0141ee5577b9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"event_type\":\"doc_signed\",\n    \"signer_who_signed\":\"fake\",\n    \"token\":\"17d68082-6f8d-46f4-a9d2-941f3d06a044\",\n    \"status\":\"SIGNED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/webhook/zapsign"
+			},
+			"response": []
 		}
 	],
 	"auth": {
