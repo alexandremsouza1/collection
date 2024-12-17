@@ -3219,7 +3219,7 @@
 								}
 							}
 						},
-						"url": "{{base_url}}/webhooks/create"
+						"url": "{{base_url}}/webhooks/account/create/fiducia"
 					},
 					"response": []
 				}
