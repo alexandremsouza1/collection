@@ -3200,6 +3200,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Create Account",
+					"id": "b70b9195-4c65-464e-831d-c2bdbb8c4195",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event\": \"ACCOUNT_OPENING\",\n    \"event_description\": \"Evento de abertura de nova conta\",\n    \"clientId\": \"8592485f-e1d3-49fc-a96c-79d665b5bbfd\",\n    \"analysisId\": \"bf8bd0a4-0f91-4a06-a9be-fc0b2a01c3e4\",\n    \"name\": \"GREGORIO TEIXEIRA\",\n    \"document\": \"65771903051\",\n    \"account\": \"52648\",\n    \"account_digit\": \"9\",\n    \"temporary_pwd\": \"54236895\",\n    \"operator_code\": \"54215325\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/webhooks/create"
+					},
+					"response": []
 				}
 			],
 			"id": "45c62999-cf7c-4e7f-a4d0-543db871f597"
